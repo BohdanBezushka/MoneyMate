@@ -1,7 +1,7 @@
 ---
-name: 'BUG: <TITLE>'
+name: BUG
 about: Create a report to help us improve
-title: BUG
+title: 'BUG: <TITLE>'
 labels: ''
 assignees: ''
 
