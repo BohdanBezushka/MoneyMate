@@ -35,13 +35,13 @@
 					<a class="navbar-brand" href="#"> <img src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" /></a>
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">How it works</a>
+							<a class="nav-link active" aria-current="page" href="#how-it-works">How it works</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Reviews</a>
+							<a class="nav-link" href="#reviews">Reviews</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link disabled">Contact</a>
+							<a class="nav-link" href="#contact">Contact</a>
 						</li>
 					</ul>
 					<form class="d-flex" role="search">
@@ -53,83 +53,93 @@
 		</nav>
 
 		<!--Introduction section-->
-		<div class="container m-5">
-			<div class="row">
-				<div class="col-md-6">
-					<h1>The solution to control your expenses!</h1>
-					<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
-					<button class="btn btn-primary">Try MoneyMate now!</button>
-				</div>
-				<div class="col-md-6">
-					<img class="img-fluid" src="{% static 'img/foto1.jpg' %}" alt="A person counting money.">
+		<section class="introduction-section">
+			<div class="container m-5">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>The solution to control your expenses!</h1>
+						<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
+						<button class="btn btn-primary">Try MoneyMate now!</button>
+					</div>
+					<div class="col-md-6">
+						<img class="img-fluid" src="{% static 'img/foto1.jpg' %}" alt="A person counting money.">
+					</div>
 				</div>
 			</div>
-		</div>
-
+		</section>
+		
 		<!--How it works Section PART 1-->
-		<div class="container m-5">
-			<div class="row">
-				<div class="col-md-6 col-lg-3 mb-4">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-				<div class="col-md-6 col-lg-3 mb-4">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-				<div class="col-md-6 col-lg-3 mb-4">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-				</div>
-				<div class="col-md-6 col-lg-3 mb-4">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		<section class="how-it-works-partone">
+			<h1>Smart expense management that grows your wallet</h1>
+			<div class="container m-5">
+				<div class="row">
+					<div class="col-md-6 col-lg-3 mb-4">
+						<h5 class="card-title">Time</h5>
+						<p class="card-text">you get more<br> time for yourself!</p>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-4">
+						<h5 class="card-title">100%</h5>
+						<p class="card-text">visibility on all<br>operational spend!</p>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-4">
+						<h5 class="card-title">Free</h5>
+						<p class="card-text">for the first<br> 10,000 users!</p>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-4">
+						<h5 class="card-title">24%</h5>
+						<p class="card-text">more savings<br> among our users!</p>
+					</div>
 				</div>
 			</div>
-		</div>
-
+		</section>
+		
 		<!--How it works Section PART 2-->
-		<div class="container m-5">
-			<div class="row">
-				<div class="col-md-6">
-					<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="A person counting money.">
-				</div>
-				<div class="col-md-6">
-					<h1>The solution to control your expenses!</h1>
-					<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
-					<button class="btn btn-primary">Try MoneyMate now!</button>
+		<section class="how-it-works-partwo">
+			<h1>How MoneyMate works</h1>
+			<h2>Three steps to smarter spending</h2>
+			<div id="how-it-works" class="container m-5">
+				<div class="row">
+					<div class="col-md-6">
+						<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="A person counting money.">
+					</div>
+					<div class="col-md-6">
+						<h1>SIGN UP</h1>
+						<p>All you need is a username, an email address,<br> and a strong password to begin managing your finances.</p>
+						<button class="btn btn-primary">Try MoneyMate now!</button>
+					</div>
 				</div>
 			</div>
-		</div>
+	
+			<div class="container m-5">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>RECORD</h1>
+						<p>When you record an expense or income, you need to enter the exact date,<br> amount, and category. You can also include a more detailed description if you want to.</p>
+						<button class="btn btn-primary">Try MoneyMate now!</button>
+					</div>
+					<div class="col-md-6">
+						<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="A person counting money.">
+					</div>
+				</div>
+			</div>
+	
+			<div class="container m-5">
+				<div class="row">
+					<div class="col-md-6">
+						<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="A person counting money.">
+					</div>
+					<div class="col-md-6">
+						<h1>Share</h1>
+						<p>Don't forget to share the app with your family, friends, and acquaintances so they can save money too!</p>
+						<button class="btn btn-primary">Try MoneyMate now!</button>
+					</div>
+				</div>
+			</div>
 
-		<div class="container m-5">
-			<div class="row">
-				<div class="col-md-6">
-					<h1>The solution to control your expenses!</h1>
-					<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
-					<button class="btn btn-primary">Try MoneyMate now!</button>
-				</div>
-				<div class="col-md-6">
-					<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="A person counting money.">
-				</div>
-			</div>
-		</div>
-
-		<div class="container m-5">
-			<div class="row">
-				<div class="col-md-6">
-					<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="A person counting money.">
-				</div>
-				<div class="col-md-6">
-					<h1>The solution to control your expenses!</h1>
-					<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
-					<button class="btn btn-primary">Try MoneyMate now!</button>
-				</div>
-			</div>
-		</div>
+		</section>
 
 		<!--Reviews Section-->
-		<section class="reviews">
+		<section id="reviews" class="reviews">
 			<h2>Reviews</h2>
 			<h3>98% of customers say switching to MoneyMate is easy.</h2>
 
@@ -138,17 +148,17 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face1.jpg' %}" alt="It's a user review">
+							<img class="review-img rounded circle" src="{% static 'img/face1.jpg' %}" alt="Review of Maria Castillo">
 							<p class="review-text">"A great tool to monitor credit card expenses, collect receipts, and facilitate accounting."</p>
 							<div class="review-info">
-								<p class="review-user">Joyce Smith</p>
+								<p class="review-user">Maria Castillo</p>
 							</div>
 						</div>
 				  	</div>
 					<div class="carousel-item">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face2.jpg' %}" alt="It's a user review">
-							<p class="review-text">"A great tool to monitor credit card expenses, collect receipts, and facilitate accounting."</p>
+							<img class="review-img rounded circle" src="{% static 'img/face2.jpg' %}" alt="Review of Joyce Smith">
+							<p class="review-text">"MoneyMate is an ingenious way to manage travel costs and keep track of all my expenses. It really makes my life much easier."</p>
 							<div class="review-info">
 								<p class="review-user">Joyce Smith</p>
 							</div>
@@ -156,10 +166,10 @@
 					</div>
 				 	 <div class="carousel-item">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face3.jpg' %}" alt="It's a user review">
-							<p class="review-text">"A great tool to monitor credit card expenses, collect receipts, and facilitate accounting."</p>
+							<img class="review-img rounded circle" src="{% static 'img/face3.jpg' %}" alt="Review of Morgan Spielber">
+							<p class="review-text">"Ever since I started using MoneyMate, my expenses have decreased!"</p>
 							<div class="review-info">
-								<p class="review-user">Joyce Smith</p>
+								<p class="review-user">Morgan Spielber</p>
 							</div>
 						</div>
 				  	</div>
@@ -177,7 +187,7 @@
 		</section>
 
 		<!--Footer-->
-		<footer class="d-flex flex-column align-items-center justify-content-center">
+		<footer id="contact" class="d-flex flex-column align-items-center justify-content-center">
 			<h2>Contact</h2>
 			<div class="iconons-social-media d-flex flex-wrap align-items-center justify-content-center">
 				<p>+34 684 095 474<br>+353 87 407 3204<br>bbezusha@gmail.com</p>

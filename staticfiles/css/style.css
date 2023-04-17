@@ -1,0 +1,38 @@
+/*Reviews Section*/
+.reviews{
+    padding: 40px 40px 80px 40px;
+}
+
+.reviews .carousel{
+    max-width: 800px;
+}
+
+.carousel-item{
+    height: 500px;
+}
+
+.carousel-item .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-img{
+    height: 150px;
+    width: 150px;
+    margin: 10px 10px 20px 10px;
+}
+
+.review-text{
+    max-width: 70%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.review-info{
+    font-weight: bold;
+    text-align: center;
+}
