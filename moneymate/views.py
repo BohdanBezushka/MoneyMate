@@ -13,3 +13,8 @@ def login(request):
     #The user can log in.
     form = AuthenticationForm()
     return render(request, 'moneymate/accounts/login.html', {'form': form})
+
+def signup(request):
+    #The user can sign up.
+    form = AuthenticationForm()
+    return render(request, 'moneymate/accounts/signup.html', {'form': form})
