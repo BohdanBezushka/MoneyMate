@@ -137,3 +137,6 @@ STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# To prevent 500 errors during login and registration.
+ACCOUNT_EMAIL_VERIFICATION = 'none'

@@ -20,5 +20,5 @@ from moneymate import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homePage, name='index'),
+    path('', views.homePage, name='base'),
 ]
