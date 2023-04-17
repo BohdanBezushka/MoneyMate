@@ -46,8 +46,12 @@
 						</li>
 					</ul>
 					<form class="d-flex" role="search">
-						<button class="btn btn-outline-success me-2" type="text"><a href="{% url 'login' %}">Login</a></button>
-						<button class="btn btn-outline-success" type="text">Sign up</button>
+						<a href="{% url 'login' %}">
+							<button class="btn btn-outline-success me-2" type="button">Login</button>
+						</a>
+						<a href="{% url 'signup' %}">
+							<button class="btn btn-outline-success" type="button">Sign up</button>
+						</a>
 					</form>
 				</div>
 			</div>
