@@ -9,12 +9,7 @@ def homePage(request):
     # project in the 'urls.py' file in order to visualize the HTML content.
     return render(request, 'moneymate/base.html')
 
-def login(request):
-    #The user can log in.
-    form = AuthenticationForm()
-    return render(request, 'moneymate/accounts/login.html', {'form': form})
-
-def signup(request):
-    #The user can sign up.
-    form = AuthenticationForm()
-    return render(request, 'moneymate/accounts/signup.html', {'form': form})
+def dashboard(request):
+    # When the user logs in or registers, he/she will be taken 
+    # directly to the templates/moneymate/dashboard.html file.
+    return render(request, 'moneymate/dashboard.html')

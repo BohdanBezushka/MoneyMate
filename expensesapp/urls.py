@@ -21,7 +21,6 @@ from moneymate import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homePage, name='base'),
+    path('dashboard/', views.dashboard, name='dashboard'),
     path('accounts/', include('allauth.urls')),
-    path('login/', views.login, name='login'),
-    path('signup/', views.signup, name='signup'),
 ]
