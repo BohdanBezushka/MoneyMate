@@ -52,7 +52,12 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+
+# If a user logs in or registers, they will be redirected to the dashboard.
 LOGIN_REDIRECT_URL = 'dashboard'
+SIGNUP_REDIRECT_URL = 'dashboard'
+
+# When the user logs out, they will automatically be redirected to the commercial page (base.html).
 LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
