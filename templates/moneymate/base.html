@@ -33,7 +33,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-					<a class="navbar-brand" href="#"> <img class="img-nav" src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" /></a>
+					<a class="navbar-brand" href="#page-start"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" /></a>
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link" aria-current="page" href="#how-it-works">How it works</a>
@@ -59,12 +59,14 @@
 
 		<!--Introduction section-->
 		<section class="introduction-section">
-			<div class="container m-5">
+			<div class="container m-3">
 				<div class="row">
 					<div class="col-md-6">
 						<h1>The solution to control your expenses!</h1>
 						<p>Acquire a comprehensive solution that is currently aiding over 1200 individuals in making more intelligent spending decisions. Take charge of your expenses and income to optimize your savings.</p>
-						<button class="btn btn-primary">Try MoneyMate now!</button>
+						<a class="nav-link" href="{% url 'account_signup' %}">
+							<button class="btn btn-primary">Try MoneyMate now!</button>
+						</a>
 					</div>
 					<div class="col-md-6">
 						<img class="img-fluid" src="{% static 'img/foto1.jpg' %}" alt="A person counting money.">
@@ -107,18 +109,20 @@
 		</section>
 		
 		<!--How it works Section PART 2-->
-		<section class="how-it-works-partwo mt-5">
+		<section id="how-it-works" class="how-it-works-partwo mt-5">
 			<h1>How MoneyMate works</h1>
 			<h2>Three steps to smarter spending</h2>
-			<div id="how-it-works" class="container m-4">
+			<div class="container m-4">
 				<div class="row">
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="A person counting money.">
+						<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="Number 1.">
 					</div>
 					<div class="col-md-6">
 						<h1>SIGN UP</h1>
 						<p>All you need is a username, an email address,<br> and a strong password to begin managing your finances.</p>
-						<button class="btn btn-primary">Try MoneyMate now!</button>
+						<a class="nav-link" href="{% url 'account_signup' %}">
+							<button class="btn btn-primary">Try MoneyMate now!</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -128,10 +132,12 @@
 					<div class="col-md-6">
 						<h1>RECORD</h1>
 						<p>When you record an expense or income, you need to enter the exact date,<br> amount, and category. You can also include a more detailed description if you want to.</p>
-						<button class="btn btn-primary">Try MoneyMate now!</button>
+						<a class="nav-link" href="{% url 'account_signup' %}">
+							<button class="btn btn-primary">Try MoneyMate now!</button>
+						</a>
 					</div>
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="A person counting money.">
+						<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="Number 2.">
 					</div>
 				</div>
 			</div>
@@ -139,12 +145,14 @@
 			<div class="container m-4">
 				<div class="row">
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="A person counting money.">
+						<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="Number3.">
 					</div>
 					<div class="col-md-6">
 						<h1>Share</h1>
 						<p>Don't forget to share the app with your family, friends, and acquaintances so they can save money too!</p>
-						<button class="btn btn-primary">Try MoneyMate now!</button>
+						<a class="nav-link" href="{% url 'account_signup' %}">
+							<button class="btn btn-primary">Try MoneyMate now!</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -198,24 +206,31 @@
 
 		</section>
 
-		<!--Footer-->
-		<footer id="contact" class="d-flex flex-column align-items-center justify-content-center">
+		<!--Contact-->
+		<section id="contact" class="d-flex flex-column align-items-center justify-content-center text-center">
 			<h2>Contact</h2>
-			<div class="iconons-social-media d-flex flex-wrap align-items-center justify-content-center">
+			<div class="iconons-social-media">
 				<p>+34 684 095 474<br>+353 87 407 3204<br>bbezusha@gmail.com</p>
 			</div>
-			<img src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" />
+		</section>
+
+		<!--Footer-->
+
+		<footer class="d-flex flex-column align-items-center justify-content-center text-center">
+			<a class="nav-link" href="#page-start">
+				<img class="img-bottom" src="{% static 'img/MoneyMate-White.png' %}" alt="Brand:MoneyMate" />
+			</a>
 			<div class="iconons-social-media d-flex flex-wrap align-items-center justify-content-center">
 				<a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
 				<a href="https://www.twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter-square"></i></a>
 				<a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
 			</div>
 
-			<p class="copyright">Copyright © Bohdan B.P. 2022 : </p>
+			<p class="copyright">Copyright © Bohdan B.P. 2023 : </p>
 			<div class="iconons-social-media d-flex flex-wrap align-items-center justify-content-center">
 				<a href="https://github.com/BohdanBezushka" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
 				<a href="https://www.linkedin.com/in/bohdan-bezushka-perepelytsia/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-			</div>
+			</div>	
 		</footer>
 		{% endblock content %}
 

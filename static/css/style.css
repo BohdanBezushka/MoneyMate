@@ -1,6 +1,9 @@
 /*Google Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
 
+
+/*                 templates/moneymate/base.html            */
+
 /*Global style */
 *{
     /*----------------------------------*/
@@ -183,3 +186,16 @@ img.img-fluid {
     font-weight: bold;
     text-align: center;
 }
+
+/*Footer*/
+footer{
+    background: #5d21d5;
+    color: white;
+}
+
+.iconons-social-media a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin-right: 20px;
+  }
