@@ -203,7 +203,7 @@ footer{
 /*          templates/account/signup.html          */
 
 #signup-section {
-    margin: 10%;
+    margin: 2%;
     padding: 1rem;
     background: #5d21d5;
     color: white;
@@ -249,3 +249,21 @@ input[type="email"] {
   padding: 4px;
   box-sizing: border-box;
 }
+
+
+/*          templates/account/login.html          */
+input#id_remember{
+    width: 20px;
+    height: 20px;
+}
+
+a.button.secondaryAction.forgot-password {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a.button.secondaryAction.forgot-password:hover {
+    color:#FFD700;
+  }
