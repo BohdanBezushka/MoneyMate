@@ -22,6 +22,11 @@ h1{
     font-weight: 800;
 }
 
+h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
+}
+
 p{
     font-size: 1.4rem;
 }
@@ -117,23 +122,40 @@ section.how-it-works-partwo h2 {
     font-size: 3rem;
     text-align: center;
 }
-
-.img-fluid {
+div.col-md-6 {
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+
+img.img-fluid {
     height: 75%;
     width: 75%;
 }
+
 /*Reviews Section*/
-.reviews{
-    padding: 40px 40px 80px 40px;
+
+#reviews{
+    background: #5d21d5;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reviews h2 {
+    font-size: 2.6rem;
+    font-weight: 800;
 }
 
 .reviews .carousel{
-    max-width: 800px;
+    max-width: 700px;
 }
 
 .carousel-item{
-    height: 500px;
+    height: 350px;
 }
 
 .carousel-item .container {
