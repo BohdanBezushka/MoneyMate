@@ -236,7 +236,7 @@ footer{
 }
 
 button.btn-signup.text-center {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 800;
 }
 
@@ -267,3 +267,23 @@ a.button.secondaryAction.forgot-password {
 a.button.secondaryAction.forgot-password:hover {
     color:#FFD700;
   }
+
+/*          templates/account/logout.html          */
+
+.btn-logout {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    font-weight: 800;
+}
+  
+.btn-logout:hover {
+    background-color: white;
+    color: #5d21d5;
+}
