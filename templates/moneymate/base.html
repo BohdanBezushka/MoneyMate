@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
 		<!--Favicon-->
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
 
 		<title>MoneyMate</title>
 	</head>
@@ -69,45 +69,60 @@
 						</a>
 					</div>
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto1.jpg' %}" alt="A person counting money.">
+						<img class="img-fluid" src="{% static 'img/foto1.jpg' %}" alt="A person counting money." />
 					</div>
 				</div>
 			</div>
 		</section>
-		
+
 		<!--How it works Section PART 1-->
 		<section class="how-it-works-partone">
-			<h1>Smart expense management<br> that grows your wallet</h1>
+			<h1>
+				Smart expense management<br />
+				that grows your wallet
+			</h1>
 			<div class="container m-5">
 				<div class="row">
 					<div class="col-md-6 col-lg-3 mb-4">
 						<span class="card-square">
 							<h5 class="card-title">Time</h5>
-							<p class="card-text">you get more<br> time for yourself!</p>
+							<p class="card-text">
+								you get more<br />
+								time for yourself!
+							</p>
 						</span>
 					</div>
 					<div class="col-md-6 col-lg-3 mb-4">
 						<span class="card-square">
 							<h5 class="card-title">100%</h5>
-							<p class="card-text">visibility on all<br>operational spend!</p>
+							<p class="card-text">
+								visibility on all<br />
+								operational spend!
+							</p>
 						</span>
 					</div>
 					<div class="col-md-6 col-lg-3 mb-4">
 						<span class="card-square">
 							<h5 class="card-title">Free</h5>
-							<p class="card-text">for the first<br> 10,000 users!</p>
+							<p class="card-text">
+								for the first<br />
+								10,000 users!
+							</p>
 						</span>
 					</div>
 					<div class="col-md-6 col-lg-3 mb-4">
 						<span class="card-square">
 							<h5 class="card-title">24%</h5>
-							<p class="card-text">more savings<br> among our users!</p>
+							<p class="card-text">
+								more savings<br />
+								among our users!
+							</p>
 						</span>
 					</div>
 				</div>
 			</div>
 		</section>
-		
+
 		<!--How it works Section PART 2-->
 		<section id="how-it-works" class="how-it-works-partwo mt-5">
 			<h1>How MoneyMate works</h1>
@@ -115,37 +130,43 @@
 			<div class="container m-4">
 				<div class="row">
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="Number 1.">
+						<img class="img-fluid" src="{% static 'img/foto2.png' %}" alt="Number 1." />
 					</div>
 					<div class="col-md-6">
 						<h1>SIGN UP</h1>
-						<p>All you need is a username, an email address,<br> and a strong password to begin managing your finances.</p>
+						<p>
+							All you need is a username, an email address,<br />
+							and a strong password to begin managing your finances.
+						</p>
 						<a class="nav-link" href="{% url 'account_signup' %}">
 							<button class="btn btn-primary">Try MoneyMate now!</button>
 						</a>
 					</div>
 				</div>
 			</div>
-	
+
 			<div class="container m-4">
 				<div class="row">
 					<div class="col-md-6">
 						<h1>RECORD</h1>
-						<p>When you record an expense or income, you need to enter the exact date,<br> amount, and category. You can also include a more detailed description if you want to.</p>
+						<p>
+							When you record an expense or income, you need to enter the exact date,<br />
+							amount, and category. You can also include a more detailed description if you want to.
+						</p>
 						<a class="nav-link" href="{% url 'account_signup' %}">
 							<button class="btn btn-primary">Try MoneyMate now!</button>
 						</a>
 					</div>
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="Number 2.">
+						<img class="img-fluid" src="{% static 'img/foto3.png' %}" alt="Number 2." />
 					</div>
 				</div>
 			</div>
-	
+
 			<div class="container m-4">
 				<div class="row">
 					<div class="col-md-6">
-						<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="Number3.">
+						<img class="img-fluid" src="{% static 'img/foto4.png' %}" alt="Number3." />
 					</div>
 					<div class="col-md-6">
 						<h1>Share</h1>
@@ -161,56 +182,96 @@
 		<!--Reviews Section-->
 		<section id="reviews" class="reviews">
 			<h2>Reviews</h2>
-			<h3>98% of customers say switching to MoneyMate is easy.</h2>
+			<h3>98% of customers say switching to MoneyMate is easy.</h3>
 
 			<!--Carousel-->
 			<div id="carousel-reviews" class="carousel carousel-dark slide">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face1.jpg' %}" alt="Review of Maria Castillo">
+							<img class="review-img rounded circle" src="{% static 'img/face1.jpg' %}" alt="Review of Maria Castillo" />
 							<p class="review-text">"A great tool to monitor credit card expenses, collect receipts, and facilitate accounting."</p>
 							<div class="review-info">
 								<p class="review-user">Maria Castillo</p>
 							</div>
 						</div>
-				  	</div>
+					</div>
 					<div class="carousel-item">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face2.jpg' %}" alt="Review of Joyce Smith">
+							<img class="review-img rounded circle" src="{% static 'img/face2.jpg' %}" alt="Review of Joyce Smith" />
 							<p class="review-text">"MoneyMate is an ingenious way to manage travel costs and keep track of all my expenses. It really makes my life much easier."</p>
 							<div class="review-info">
 								<p class="review-user">Joyce Smith</p>
 							</div>
 						</div>
 					</div>
-				 	 <div class="carousel-item">
+					<div class="carousel-item">
 						<div class="container">
-							<img class="review-img rounded circle" src="{% static 'img/face3.jpg' %}" alt="Review of Morgan Spielber">
+							<img class="review-img rounded circle" src="{% static 'img/face3.jpg' %}" alt="Review of Morgan Spielber" />
 							<p class="review-text">"Ever since I started using MoneyMate, my expenses have decreased!"</p>
 							<div class="review-info">
 								<p class="review-user">Morgan Spielber</p>
 							</div>
 						</div>
-				  	</div>
+					</div>
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carousel-reviews" data-bs-slide="prev">
-				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				  <span class="visually-hidden">Previous</span>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
 				</button>
 				<button class="carousel-control-next" type="button" data-bs-target="#carousel-reviews" data-bs-slide="next">
-				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				  <span class="visually-hidden">Next</span>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
 				</button>
-			  </div>
-
+			</div>
 		</section>
 
 		<!--Contact-->
 		<section id="contact" class="d-flex flex-column align-items-center justify-content-center text-center">
-			<h2>Contact</h2>
-			<div class="iconons-social-media">
-				<p>+34 684 095 474<br>+353 87 407 3204<br>bbezusha@gmail.com</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card-body">
+							<h5 class="card-title">Location</h5>
+							<p class="card-text">
+								O'Connell Street Upper,<br />
+								North City, Dublin
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card-body">
+							<h5 class="card-title">Opening Hours</h5>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Day</th>
+										<th>Hours</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Monday - Friday</td>
+										<td>9:00 am - 6:00 pm</td>
+									</tr>
+									<tr>
+										<td>Saturday - Sunday</td>
+										<td>Closed</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card-body">
+							<h5 class="card-title">Contact</h5>
+							<p class="card-text">
+								Phone: +34 684 095 474<br />
+								Email: bbezushka@gmail.com
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -226,11 +287,11 @@
 				<a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
 			</div>
 
-			<p class="copyright">Copyright © Bohdan B.P. 2023 : </p>
+			<p class="copyright">Copyright © Bohdan B.P. 2023 :</p>
 			<div class="iconons-social-media d-flex flex-wrap align-items-center justify-content-center">
 				<a href="https://github.com/BohdanBezushka" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
 				<a href="https://www.linkedin.com/in/bohdan-bezushka-perepelytsia/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-			</div>	
+			</div>
 		</footer>
 		{% endblock content %}
 
@@ -240,7 +301,7 @@
 		<!-- Custom JavaScript -->
 		<script src="{% static 'js/myscript.js' %}"></script>
 
-		 <!-- Font awesome icons-->
-		 <script src="https://kit.fontawesome.com/b83175b9a4.js"></script>
+		<!-- Font awesome icons-->
+		<script src="https://kit.fontawesome.com/b83175b9a4.js"></script>
 	</body>
 </html>
