@@ -6,7 +6,7 @@ from django.utils.timezone import now
 # Create your models here:
 
 # This is the database for user expenses.
-class addExpense(models.Model):
+class Expense(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     date = models.DateField(default=now)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
