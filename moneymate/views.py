@@ -14,4 +14,10 @@ def dashboard(request):
     # directly to the templates/moneymate/dashboard.html file.
     return render(request, 'moneymate/dashboard.html')
 
-    
+def viewExpensesList(request):
+    # This feature allows the user to review the expenses
+    # they have previously entered in the application. 
+    # By clicking on 'Expenses' in the navigation bar of 
+    # the dashboard.html, users can access a list of their recorded expenses.
+    return render(request, 'moneymate/expenses/list_expenses.html')
+
