@@ -13,3 +13,5 @@ def dashboard(request):
     # When the user logs in or registers, he/she will be taken 
     # directly to the templates/moneymate/dashboard.html file.
     return render(request, 'moneymate/dashboard.html')
+
+    
