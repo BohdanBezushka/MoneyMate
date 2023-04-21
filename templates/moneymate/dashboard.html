@@ -13,7 +13,7 @@
       <a class="navbar-brand-img img-dashboard" href="#page-start"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" /></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="">Expenses</a>
+          <a class="nav-link" href="{% url 'listExpenses' %}">Expenses</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#reviews">Incomes</a>
@@ -48,7 +48,9 @@
       </h1>
       <div class="btn-toolbar mb-2 mb-md-0 ">
         <div class="btn-group me-2">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i>Add expense</button>
+          <a class="nav-link" href="{% url 'addExpense' %}">
+            <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i>Add expense</button>
+          </a>
           <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i>Add income</button>
         </div>
       </div>

@@ -21,7 +21,7 @@ def viewExpensesList(request):
     # the dashboard.html, users can access a list of their recorded expenses.
     return render(request, 'moneymate/expenses/list_expenses.html')
 
-def addExpenses(request):
+def addExpense(request):
    # This feature enables users to access their expense records.
    # By clicking on the appropriate button
     return render(request, 'moneymate/expenses/add_expense.html')

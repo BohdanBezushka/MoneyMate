@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.homePage, name='base'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('accounts/', include('allauth.urls')),
+    path('expenses/', views.viewExpensesList, name='listExpenses'),
+    path('addexpense/', views.addExpense, name='addExpense'),
 ]
