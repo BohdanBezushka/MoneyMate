@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
+from .models import Category, Expense
 
 # Create your views here:
 
@@ -19,9 +20,13 @@ def viewExpensesList(request):
     # they have previously entered in the application. 
     # By clicking on 'Expenses' in the navigation bar of 
     # the dashboard.html, users can access a list of their recorded expenses.
-    return render(request, 'moneymate/expenses/list_expenses.html')
+    categories = Category.objects.all()
+    context = {'categories': categories}
+    return render(request, 'moneymate/expenses/list_expenses.html', context)
 
 def addExpense(request):
-   # This feature enables users to access their expense records.
-   # By clicking on the appropriate button
-    return render(request, 'moneymate/expenses/add_expense.html')
+    # This feature enables users to access their expense records.
+    # By clicking on the appropriate button
+    categories = Category.objects.all()
+    context = {'categories': categories}
+    return render(request, 'moneymate/expenses/add_expense.html', context)
