@@ -18,6 +18,8 @@ def dashboard(request):
     # directly to the templates/moneymate/dashboard.html file.
     return render(request, 'moneymate/dashboard.html')
 
+#                        EXPENSES            ----------
+
 def viewExpensesList(request):
     # This feature allows the user to review the expenses
     # they have previously entered in the application. 
@@ -105,7 +107,7 @@ def deleteExpense(request, id):
     return redirect('listExpenses')
 
 
-
+#                        INCOMES           ----------
 
 #           Bug********
 def expense_list(request):
