@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_EMAIL_REQUIRED = True
 
 # If a user logs in or registers, they will be redirected to the dashboard.
 LOGIN_REDIRECT_URL = 'dashboard'

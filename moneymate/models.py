@@ -7,7 +7,7 @@ from django.utils.timezone import now
 
 # This is the database for user expenses.
 class Expense(models.Model):
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(default=now)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.CharField(max_length=50)
