@@ -25,4 +25,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('expenses/', views.viewExpensesList, name='listExpenses'),
     path('addexpense/', views.addExpense, name='addExpense'),
+    path('editexpense/', views.editExpense, name='edit-expense'),
 ]

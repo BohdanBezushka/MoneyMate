@@ -57,7 +57,13 @@ def addExpense(request):
 
         return redirect('listExpenses')
 
-def editExpense(request):
+def editExpense(request, id):
     #The user will be able to edit the chosen expense.
+    expense = Expense.objects.get(pk=id)
+    context = {
+        'expense':expense,
+        'values':expense,
+        
+    }
     if request.method == 'GET':
-        return render(request, 'moneymate/expenses/edit_expense.html')
+        return render(request, 'moneymate/expenses/edit_expense.html', context)
