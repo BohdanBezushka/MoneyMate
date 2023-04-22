@@ -22,7 +22,7 @@ def viewExpensesList(request):
     # By clicking on 'Expenses' in the navigation bar of 
     # the dashboard.html, users can access a list of their recorded expenses.
     categories = Category.objects.all()
-    expenses = Expense.objects.filter(user = request.user)
+    expenses = Expense.objects.filter(user=request.user).order_by('-date')
     context = {'expenses': expenses}
     return render(request, 'moneymate/expenses/list_expenses.html', context)
 
