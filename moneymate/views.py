@@ -44,7 +44,7 @@ def addExpense(request):
             messages.error(request, 'Amount is required.')
             return render(request, 'moneymate/expenses/add_expense.html', context)
         description = request.POST['description']
-        date = request.POST['expense_date']
+        date = request.POST['date']
         category = request.POST['category']
 
         if not description:
@@ -62,9 +62,33 @@ def editExpense(request, id):
     expense = Expense.objects.get(pk=id)
     categories = Category.objects.all()
     context = {
-        'expense':expense,
-        'values':expense,
-        'categories':categories
+        'expense': expense,
+        'values': expense,
+        'categories': categories
     }
     if request.method == 'GET':
         return render(request, 'moneymate/expenses/edit_expense.html', context)
+    if request.method == 'POST':
+        amount = request.POST['amount']
+
+        if not amount:
+            messages.error(request, 'Amount is required.')
+            return render(request, 'moneymate/expenses/edit_expense.html', context)
+        description = request.POST['description']
+        date = request.POST['date']
+        category = request.POST['category']
+
+        if not description:
+            messages.error(request, 'Description is required.')
+            return render(request, 'moneymate/expenses/edit_expense.html', context)
+
+        expense.user = request.user
+        expense.amount = amount
+        expense.date = date
+        expense.category = category
+        expense.description = description
+
+        expense.save()
+        messages.success(request, 'Expense updated  successfully.')
+
+        return redirect('listExpenses')

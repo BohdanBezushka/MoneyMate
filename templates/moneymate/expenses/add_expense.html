@@ -8,8 +8,8 @@
       <form action="{% url 'addExpense' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
-          <label for="expense_date">Date of Expense:</label>
-          <input type="date" class="form-control" name="expense_date" id="expense_date" required>
+          <label for="date">Date of Expense:</label>
+          <input type="date" class="form-control" name="date" id="date"  required>
         </div>
         <div class="form-group">
           <label for="amount">Amount:</label>
