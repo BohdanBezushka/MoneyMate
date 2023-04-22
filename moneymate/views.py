@@ -58,8 +58,7 @@ def addExpense(request):
             messages.error(request, 'Description is required.')
             return render(request, 'moneymate/expenses/add_expense.html', context)
 
-        Expense.objects.create(user=request.user, amount=amount, date=date,
-                               category=category, description=description)
+        Expense.objects.create(user=request.user, amount=amount, date=date,category=category, description=description)
         messages.success(request, 'Expense saved successfully.')
 
         return redirect('listExpenses')
@@ -108,6 +107,87 @@ def deleteExpense(request, id):
 
 
 #                        INCOMES           ----------
+
+
+def viewIncomesList(request):
+    # This feature allows the user to review the incomes
+    # they have previously entered in the application. 
+    # By clicking on 'Incomes' in the navigation bar of 
+    # the dashboard.html, users can access a list of their recorded incomes.
+    origins = Origin.objects.all()
+    incomes = Income.objects.filter(user=request.user).order_by('-date')
+    paginate = Paginator(incomes, 3)
+    number_of_page = request.GET.get('page')
+    page_object = paginate.get_page(number_of_page)
+    context = {'incomes': incomes, 'page_object': page_object}
+    return render(request, 'moneymate/incomes/list_incomes.html', context)
+
+def addIncome(request):
+    # This feature enables users to access their income records.
+    # By clicking on the appropriate button.
+    origins = Origin.objects.all()
+    context = {
+        'origins': origins,
+        'values': request.POST
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/incomes/add_income.html', context)
+
+    if request.method == 'POST':
+        amount = request.POST['amount']
+
+        if not amount:
+            return render(request, 'moneymate/incomes/add_income.html', context)
+        description = request.POST['description']
+        date = request.POST['date']
+        origin = request.POST['origin']
+
+        if not description:
+            return render(request, 'moneymate/incomes/add_income.html', context)
+
+        Income.objects.create(user=request.user, amount=amount, date=date, origin=origin, description=description)
+
+        return redirect('listIncomes')
+
+def editIncome(request, id):
+    #The user will be able to edit the chosen income.
+    income = Income.objects.get(pk=id)
+    origins = origins.objects.all()
+    context = {
+        'income': income,
+        'values': income,
+        'origins': origins
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/incomes/edit_income.html', context)
+    if request.method == 'POST':
+        amount = request.POST['amount']
+
+        if not amount:
+            return render(request, 'moneymate/incomes/edit_income.html', context)
+        description = request.POST['description']
+        date = request.POST['date']
+        origin = request.POST['origin']
+
+        if not description:
+            return render(request, 'moneymate/incomes/edit_income.html', context)
+
+        income.user = request.user
+        income.amount = amount
+        income.date = date
+        income.origin = origin
+        income.description = description
+
+        income.save()
+
+        return redirect('listIncomes')
+
+def deleteIncome(request, id):
+    # The user will be able to delete the chosen expense.
+    income = Income.objects.get(pk=id)
+    income.delete()
+    return redirect('listIncomes')
+
 
 #           Bug********
 def expense_list(request):
