@@ -23,8 +23,10 @@ urlpatterns = [
     path('', views.homePage, name='base'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('accounts/', include('allauth.urls')),
+    # Create, read, update and delete EXPENSES:
     path('expenses/', views.viewExpensesList, name='listExpenses'),
     path('addexpense/', views.addExpense, name='addExpense'),
     path('editexpense/<int:id>', views.editExpense, name='edit-expense'),
     path('deleteExpense/<int:id>', views.deleteExpense, name='delete-expense'),
+    # Create, read, update and delete INCOMES:
 ]
