@@ -293,3 +293,27 @@ a.button.secondaryAction.forgot-password:hover {
 a.navbar-brand-img.img-dashboard {
     max-width: 300px;
 }
+
+button.navbar-toggler.\.dashboard-toggler{
+    background-color: white;
+}
+
+.links-dashboard a {
+    color:white;
+}
+
+.links-dashboard a:hover {
+    color:#FFD700;
+}
+
+#control-dashboard{
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 5px;
+    background: #212529;
+}
+
+#info-dashboard{
+    color: white;
+    padding: 5px;
+}

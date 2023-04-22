@@ -4,27 +4,27 @@
 {% block content %}
 
 <!--Navigation bar-->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler .dashboard-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand-img img-dashboard" href="#page-start"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate.png' %}" alt="Brand:MoneyMate" /></a>
+      <a class="navbar-brand-img img-dashboard" href="{% url 'dashboard' %}"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate-Dark.png' %}" alt="Brand:MoneyMate" /></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'listExpenses' %}">Expenses</a>
+        <li class="nav-item links-dashboard">
+          <a class="nav-link " href="{% url 'listExpenses' %}">Expenses</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item links-dashboard">
           <a class="nav-link" href="#reviews">Incomes</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item links-dashboard">
           <a class="nav-link" href="#reviews">Currencies</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item links-dashboard">
           <a class="nav-link" href="#contact">Categories</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item links-dashboard">
           <a class="nav-link" href="#reviews">Export PDF</a>
         </li>
       </ul>
@@ -37,29 +37,27 @@
   </div>
 </nav>
 
-  <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">
-        {% if request.user.is_authenticated %}
-        <span class="nav-link">Welcome, {{ request.user.username }}!</span>
-        {% else %}
-        <span class="nav-link">Welcome!</span>
-        {% endif %}
-      </h1>
-      <div class="btn-toolbar mb-2 mb-md-0 ">
-        <div class="btn-group me-2">
-          <a class="nav-link" href="{% url 'addExpense' %}">
-            <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i>Add expense</button>
-          </a>
-          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i>Add income</button>
-        </div>
+<!--The user can choose to add an expense or income-->
+{% block expenses_incomes %}
+<main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+  <div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">
+      {% if request.user.is_authenticated %}
+      <span id="info-dashboard" class="nav-link">Welcome, {{ request.user.username }}!</span>
+      {% else %}
+      <span id="info-dashboard" class="nav-link">Welcome!</span>
+      {% endif %}
+    </h1>
+    <div class="btn-toolbar mb-2 mb-md-0 ">
+      <div class="btn-group me-2">
+        <a class="nav-link" href="{% url 'addExpense' %}">
+          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i>Add expense</button>
+        </a>
+        <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i>Add income</button>
       </div>
     </div>
-  </main>
-</div>
-
-
-{% block expenses_incomes %}
+  </div>
+</main>
 
 {% endblock %}
 
