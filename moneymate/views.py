@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from .models import Category, Expense
 from django.contrib import messages
+from django.db.models import Sum
+from django.core.paginator import Paginator
 
 # Create your views here:
 
@@ -23,7 +25,10 @@ def viewExpensesList(request):
     # the dashboard.html, users can access a list of their recorded expenses.
     categories = Category.objects.all()
     expenses = Expense.objects.filter(user=request.user).order_by('-date')
-    context = {'expenses': expenses}
+    paginate = Paginator(expenses, 3)
+    number_of_page = request.GET.get('page')
+    page_object = paginate.get_page(number_of_page)
+    context = {'expenses': expenses, 'page_object': page_object}
     return render(request, 'moneymate/expenses/list_expenses.html', context)
 
 def addExpense(request):
@@ -94,7 +99,22 @@ def editExpense(request, id):
         return redirect('listExpenses')
 
 def deleteExpense(request, id):
-    #The user will be able to delete the chosen expense.
+    # The user will be able to delete the chosen expense.
     expense = Expense.objects.get(pk=id)
     expense.delete()
     return redirect('listExpenses')
+
+
+
+
+#           Bug********
+def expense_list(request):
+    # The user can see the sum of all their expenses on the screen
+    expenses = Expense.objects.get(user=request.user)
+    total_expenses = expenses.aggregate(Sum('amount'))['amount__sum'] or 0
+    context = {
+        'expenses': expenses,
+        'total_expenses': total_expenses,
+    }
+    return render(request, 'moneymate/dashboard.html', context)
+
