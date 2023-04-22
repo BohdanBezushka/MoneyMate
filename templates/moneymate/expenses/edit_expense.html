@@ -1,0 +1,35 @@
+{% extends "moneymate/dashboard.html" %}
+{% load static %}
+
+{% block expenses_incomes %}
+
+<div class="card">
+    <div class="card-body">
+      <form action="{% url 'addExpense' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="expense_date">Date of Expense:</label>
+          <input type="date" class="form-control" name="expense_date" id="expense_date" required>
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input type="number" step="0.01" max="9999999999.99" class="form-control" name="amount" id="amount" value="{{values.amount}}" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select class="form-control" name="category" id="category" required>
+            {% for category in categories %}
+            <option value="{{category.name}}">{{category.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" class="form-control" name="description" id="description" value="{{values.description}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+{% endblock %}

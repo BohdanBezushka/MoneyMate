@@ -22,7 +22,7 @@
 				<td>{{ expense.category }}</td>
 				<td>{{ expense.description }}</td>
 				<td>
-					<a href="#">
+					<a href="{% url 'edit-expense' expense %}">
 						<button class="btn btn-primary">Edit</button>
 					</a>
 				</td>

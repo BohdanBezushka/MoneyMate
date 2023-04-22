@@ -56,3 +56,8 @@ def addExpense(request):
         messages.success(request, 'Expense saved successfully.')
 
         return redirect('listExpenses')
+
+def editExpense(request):
+    #The user will be able to edit the chosen expense.
+    if request.method == 'GET':
+        return render(request, 'moneymate/expenses/edit_expense.html')
