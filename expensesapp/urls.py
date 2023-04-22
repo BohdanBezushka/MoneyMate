@@ -26,4 +26,5 @@ urlpatterns = [
     path('expenses/', views.viewExpensesList, name='listExpenses'),
     path('addexpense/', views.addExpense, name='addExpense'),
     path('editexpense/<int:id>', views.editExpense, name='edit-expense'),
+    path('deleteExpense/<int:id>', views.deleteExpense, name='delete-expense'),
 ]

@@ -92,3 +92,9 @@ def editExpense(request, id):
         messages.success(request, 'Expense updated  successfully.')
 
         return redirect('listExpenses')
+
+def deleteExpense(request, id):
+    #The user will be able to delete the chosen expense.
+    expense = Expense.objects.get(pk=id)
+    expense.delete()
+    return redirect('listExpenses')
