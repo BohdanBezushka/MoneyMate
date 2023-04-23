@@ -33,4 +33,9 @@ urlpatterns = [
     path('addincome/', views.addIncome, name='addIncome'),
     path('editincome/<int:id>', views.editIncome, name='edit-income'),
     path('deleteincome/<int:id>', views.deleteIncome, name='delete-income'),
+     # Create, read, update and delete CATEGORIES:
+    path('categories/', views.viewCategoriesList, name='listCategories'),
+    path('addcategory/', views.addCategory, name='addCategory'),
+    path('editcategory/<int:id>', views.editCategory, name='edit-category'),
+    path('deletecategory/<int:id>', views.deleteCategory, name='delete-category'),
 ]

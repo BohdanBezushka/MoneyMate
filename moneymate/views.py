@@ -189,6 +189,68 @@ def deleteIncome(request, id):
     return redirect('listIncomes')
 
 
+#                        CATEGORIES          ----------
+
+
+def viewCategoriesList(request):
+    # This feature allows the user to review the categories
+    # they have previously entered in the application. 
+    # By clicking on 'Categiry' in the navigation bar of 
+    # the dashboard.html, users can access a list of their recorded categories.
+    categories = Category.objects.all()
+    paginate = Paginator(categories, 3)
+    number_of_page = request.GET.get('page')
+    page_object = paginate.get_page(number_of_page)
+    context = {'categories': categories, 'page_object': page_object}
+    return render(request, 'moneymate/categories/list_categories.html', context)
+
+def addCategory(request):
+    # This feature enables users to access their categories.
+    # By clicking on the appropriate button.
+    categories = Category.objects.all()
+    context = {
+        'categories': categories,
+        'values': request.POST
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/categories/add_category.html', context)
+
+    if request.method == 'POST':
+        name = request.POST['name']
+
+        if not name:
+            return render(request, 'moneymate/categories/add_category.html', context)
+
+        Category.objects.create(name=name)
+
+        return redirect('listCategories')
+
+def editCategory(request, id):
+    #The user will be able to edit the chategory income.
+    category = Category.objects.get(pk=id)
+    context = {
+        'category': category,
+        'values': category,
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/categories/edit_category.html', context)
+    if request.method == 'POST':
+        name = request.POST['name']
+
+        if not name:
+            return render(request, 'moneymate/categories/edit_category.html', context)
+
+        category.name = name
+        category.save()
+
+        return redirect('listCategories')
+
+def deleteCategory(request, id):
+    # The user will be able to delete the chosen category.
+    category = Category.objects.get(pk=id)
+    category.delete()
+    return redirect('listCategories')
+
 #           Bug********
 def expense_list(request):
     # The user can see the sum of all their expenses on the screen
