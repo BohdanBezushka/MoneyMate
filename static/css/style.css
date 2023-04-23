@@ -298,8 +298,13 @@ button.navbar-toggler.\.dashboard-toggler{
     background-color: white;
 }
 
+a.nav-link{
+    margin: 6px;
+}
+
 .links-dashboard a {
     color:white;
+    padding: 4px;
 }
 
 .links-dashboard a:hover {
