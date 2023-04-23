@@ -152,7 +152,7 @@ def addIncome(request):
 def editIncome(request, id):
     #The user will be able to edit the chosen income.
     income = Income.objects.get(pk=id)
-    origins = origins.objects.all()
+    origins = Origin.objects.all()
     context = {
         'income': income,
         'values': income,

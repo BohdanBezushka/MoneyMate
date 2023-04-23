@@ -16,7 +16,7 @@
           <a class="nav-link " href="{% url 'listExpenses' %}">Expenses</a>
         </li>
         <li class="nav-item links-dashboard">
-          <a class="nav-link" href="#reviews">Incomes</a>
+          <a class="nav-link" href="{% url 'listIncomes' %}">Incomes</a>
         </li>
         <li class="nav-item links-dashboard">
           <a class="nav-link" href="#reviews">Currencies</a>
@@ -54,7 +54,7 @@
           <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i> Add expense</button>
         </a>
 
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{% url 'addIncome' %}">
           <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Add income</button>
         </a>
       </div>

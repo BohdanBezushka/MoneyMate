@@ -4,14 +4,16 @@
 <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
 	<div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">
-			<span id="info-dashboard" class="nav-link">List of expenses:</span>
+			<span id="info-dashboard" class="nav-link">List of incomes:</span>
 		</h1>
 		<div class="btn-toolbar mb-2 mb-md-0">
 			<div class="btn-group me-2">
 				<a class="nav-link" href="{% url 'addExpense' %}">
 					<button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i>Add expense</button>
 				</a>
-				<button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i>Add income</button>
+				<a class="nav-link" href="{% url 'addIncome' %}">
+					<button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Add income</button>
+				  </a>
 			</div>
 		</div>
 	</div>
@@ -23,7 +25,7 @@
 			<tr>
 				<th class="col-2">Date of expense</th>
 				<th class="col-2">Amount</th>
-				<th class="col-2">Category</th>
+				<th class="col-2">Origin</th>
 				<th class="col-4">Description</th>
 				<th class="col-1"></th>
 				<!-- Column for the Edit button -->
@@ -32,26 +34,26 @@
 			</tr>
 		</thead>
 		<tbody>
-			{% if expenses.count %} {% for expense in page_object %}
+			{% if incomes.count %} {% for income in page_object %}
 			<tr>
-				<td>{{ expense.date }}</td>
-				<td>{{ expense.amount }}</td>
-				<td>{{ expense.category }}</td>
-				<td>{{ expense.description }}</td>
+				<td>{{ income.date }}</td>
+				<td>{{ income.amount }}</td>
+				<td>{{ income.origin }}</td>
+				<td>{{ income.description }}</td>
 				<td>
-					<a href="{% url 'edit-expense' expense.id %}">
+					<a href="{% url 'edit-income' income.id %}">
 						<button class="btn btn-primary">Edit</button>
 					</a>
 				</td>
 				<td>
-					<a href="{% url 'delete-expense' expense.id %}">
+					<a href="{% url 'delete-income' income.id %}">
 						<button class="btn btn-primary">Delete</button>
 					</a>
 				</td>
 			</tr>
 			{% endfor %} {% else %}
 			<tr>
-				<td colspan="6">No expenses found.</td>
+				<td colspan="6">No incomes found.</td>
 			</tr>
 			{% endif %}
 		</tbody>
