@@ -321,7 +321,7 @@ def viewOriginsList(request):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     origins = Origin.objects.filter(user=request.user)
-    paginate = Paginator(categories, 3)
+    paginate = Paginator(origins, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
     context = {'origins': origins, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
@@ -370,7 +370,7 @@ def editOrigin(request, id):
     origin = Origin.objects.get(pk=id)
     context = {
         'origin': origin,
-        'values': category,
+        'values': origin,
         'totalExpenses': totalExpenses, 
         'totalIncomes':totalIncomes, 
         'balance':balance,

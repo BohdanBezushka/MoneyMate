@@ -1,0 +1,82 @@
+{% extends "moneymate/dashboard.html" %} {% load static %} {% block expenses_incomes %}
+
+<!--The user can choose to add an expense or income-->
+<main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+	<div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">
+			<span id="info-dashboard" class="nav-link">Origins:</span>
+		</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+			<div class="btn-group me-2">
+				<a class="nav-link" href="{% url 'addOrigin' %}">
+					<button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i> Add origin</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>
+
+<div class="table-responsive m-3">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="col-4">Origin</th>
+				<th class="col-4"></th>
+				<!-- Column for the Edit button -->
+				<th class="col-4"></th>
+				<!-- Column for the Delete button -->
+			</tr>
+		</thead>
+		<tbody>
+			{% if origins.count %} {% for origin in page_object %}
+			<tr>
+				<td>{{ origin.name }}</td>
+				<td>
+					<a href="{% url 'edit-origin' origin.id %}">
+						<button class="btn btn-primary">Edit</button>
+					</a>
+				</td>
+				<td>
+					<a href="{% url 'delete-origin' origin.id %}">
+						<button class="btn btn-primary">Delete</button>
+					</a>
+				</td>
+			</tr>
+			{% endfor %} {% else %}
+			<tr>
+				<td colspan="6">No origins found.</td>
+			</tr>
+			{% endif %}
+		</tbody>
+	</table>
+
+	<!--Here is shown the page number-->
+	<div class="paginate">
+		<div class="d-flex justify-content-center justify-content-md-start mb-2 mb-md-0">
+			<p>Showing page {{page_object.number}} of {{ page_object.paginator.num_pages }}.</p>
+		</div>
+		<ul class="pagination justify-content-center justify-content-md-end">
+			{% if page_object.has_previous %}
+			<li class="page-item">
+				<a class="page-link" href="?page=1" tabindex="-1">&laquo;</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_object.previous_page_number }}">Previous</a>
+			</li>
+			{% endif %} {% for page_num in page_object.paginator.page_range %} {% if page_object.number == page_num %}
+			<li class="page-item active"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+			{% else %}
+			<li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+			{% endif %} {% endfor %} {% if page_object.has_next %}
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_object.next_page_number }}">Next</a>
+			</li>
+			<li class="page-item">
+				<a class="page-link" href="?page={{ page_object.paginator.num_pages }}">&raquo;</a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
