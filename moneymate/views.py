@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from .models import Category, Expense, Origin, Income
+from .models import Category, Expense, Origin, Income, Currency
 from django.contrib import messages
 from django.db.models import Sum
 from django.core.paginator import Paginator
@@ -14,6 +14,7 @@ def homePage(request):
     # project in the 'urls.py' file in order to visualize the HTML content.
     return render(request, 'moneymate/base.html')
 
+@login_required
 def dashboard(request):
     # When the user logs in or registers, he/she will be taken 
     # directly to the templates/moneymate/dashboard.html file.
@@ -27,6 +28,7 @@ def dashboard(request):
 
 #                        EXPENSES            ----------
 
+@login_required
 def viewExpensesList(request):
     # This feature allows the user to review the expenses
     # they have previously entered in the application. 
@@ -45,6 +47,7 @@ def viewExpensesList(request):
     context = {'expenses': expenses, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
     return render(request, 'moneymate/expenses/list_expenses.html', context)
 
+@login_required
 def addExpense(request):
     # This feature enables users to access their expense records.
     # By clicking on the appropriate button
@@ -77,6 +80,7 @@ def addExpense(request):
 
         return redirect('listExpenses')
 
+@login_required
 def editExpense(request, id):
     #The user will be able to edit the chosen expense.
     expensesAmount = Expense.objects.filter(user=request.user)
@@ -114,6 +118,7 @@ def editExpense(request, id):
 
         return redirect('listExpenses')
 
+@login_required
 def deleteExpense(request, id):
     # The user will be able to delete the chosen expense.
     expense = Expense.objects.get(pk=id)
@@ -123,7 +128,7 @@ def deleteExpense(request, id):
 
 #                        INCOMES           ----------
 
-
+@login_required
 def viewIncomesList(request):
     # This feature allows the user to review the incomes
     # they have previously entered in the application. 
@@ -142,6 +147,7 @@ def viewIncomesList(request):
     context = {'incomes': incomes, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
     return render(request, 'moneymate/incomes/list_incomes.html', context)
 
+@login_required
 def addIncome(request):
     # This feature enables users to access their income records.
     # By clicking on the appropriate button.
@@ -171,6 +177,7 @@ def addIncome(request):
 
         return redirect('listIncomes')
 
+@login_required
 def editIncome(request, id):
     #The user will be able to edit the chosen income.
     expensesAmount = Expense.objects.filter(user=request.user)
@@ -212,6 +219,7 @@ def editIncome(request, id):
 
         return redirect('listIncomes')
 
+@login_required
 def deleteIncome(request, id):
     # The user will be able to delete the chosen expense.
     income = Income.objects.get(pk=id)
@@ -395,3 +403,91 @@ def deleteOrigin(request, id):
     origin = Origin.objects.get(pk=id)
     origin.delete()
     return redirect('listOrigins')
+
+#                          CURRENCIES                   ----------
+
+@login_required
+def viewCurrenciesList(request):
+    # This feature allows the user to review the currencies
+    # they have previously entered in the application. 
+    # By clicking on 'Currency' in the navigation bar of 
+    # the dashboard.html, users can access a list of their recorded currencies.
+    currencies = Currency().objects.filter(user=request.user)
+    paginate = Paginator(currencies, 3)
+    number_of_page = request.GET.get('page')
+    page_object = paginate.get_page(number_of_page)
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    context = {'currencies': currencies, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
+    return render(request, 'moneymate/currencies/list_currencies.html', context)
+
+@login_required
+def addCurrency(request):
+    # This feature enables users to access their currency records.
+    # By clicking on the appropriate button.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    currencies = Currency.objects.filter(user=request.user)
+    context = {'currencies': currencies,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
+    if request.method == 'GET':
+        return render(request, 'moneymate/currencies/add_currencies.html', context)
+
+    if request.method == 'POST':
+        currency = request.POST['currency']
+
+        if not currency:
+            return render(request, 'moneymate/currencies/add_currencies.html', context)
+        abbreviation = request.POST['abbreviation']
+        symbol = request.POST['symbol']
+
+        if not symbol:
+            return render(request, 'moneymate/currencies/add_currencies.html', context)
+
+        Currency.objects.create(user=request.user, currency=currency, abbreviation=abbreviation, symbol=symbol)
+
+        return redirect('listCurrencies')
+
+@login_required
+def editCurrency(request, id):
+    #The user will be able to edit the chosen currency.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    currency = Currency.objects.get(pk=id)
+    context = {'currency': currency,'values': currency, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance }
+    if request.method == 'GET':
+        return render(request, 'moneymate/currencies/edit_currencies.html', context)
+    if request.method == 'POST':
+        currency = request.POST['currency']
+
+        if not currency:
+            return render(request, 'moneymate/currencies/edit_currency.html', context)
+        abbreviation = request.POST['abbreviation']
+        symbol = request.POST['symbol']
+
+        if not abbreviation:
+            return render(request, 'moneymate/currencies/edit_currency.html', context)
+
+        currency.user = request.user
+        currency.currency = currency
+        currency.abbreviation = abbreviation
+        currency.symbol = symbol
+
+        currency.save()
+
+        return redirect('listCUrrencies')
+
+@login_required
+def deleteCurrency(request, id):
+    # The user will be able to delete the chosen currency.
+    currency = Currency.objects.get(pk=id)
+    currency.delete()
+    return redirect('listCurrencies')
