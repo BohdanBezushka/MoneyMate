@@ -38,4 +38,9 @@ urlpatterns = [
     path('addcategory/', views.addCategory, name='addCategory'),
     path('editcategory/<int:id>', views.editCategory, name='edit-category'),
     path('deletecategory/<int:id>', views.deleteCategory, name='delete-category'),
+      # Create, read, update and delete Origins:
+    path('origins/', views.viewOriginsList, name='listOrigins'),
+    path('addorigin/', views.addOrigin, name='addOrigin'),
+    path('editorigin/<int:id>', views.editOrigin, name='edit-origin'),
+    path('deleteorigin/<int:id>', views.deleteOrigin, name='delete-origin'),
 ]
