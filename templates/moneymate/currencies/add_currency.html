@@ -1,0 +1,42 @@
+{% extends "moneymate/dashboard.html" %}
+{% load static %}
+
+{% block expenses_incomes %}
+<!--The user can choose to add an expense or income-->
+<main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+  <div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">
+      <span id="info-dashboard" class="nav-link">Add Currency:</span>
+    </h1>
+    <div class="btn-toolbar mb-2 mb-md-0 ">
+      <div class="btn-group me-2">
+        <a class="nav-link" href="{% url 'addCurrency' %}">
+          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Add currency</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="card m-3">
+  <div class="card-body">
+    <form action="{% url 'addCurrency' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="currency">Currency:</label>
+        <input type="text" class="form-control" name="currency" id="currency" value="{{ values.currency}}" required>
+      </div>
+      <div class="form-group">
+        <label for="abbreviation">Abbreviation:</label>
+        <input type="text" class="form-control" name="abbreviation" id="abbreviation" value="{{values.abbreviation}}" required>
+      </div>
+      <div class="form-group">
+        <label for="symbol">Symbol:</label>
+        <input type="text" class="form-control" name="symbol" id="symbol" value="{{values.symbol}}">
+      </div>
+      <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+  
+{% endblock %}

@@ -412,7 +412,7 @@ def viewCurrenciesList(request):
     # they have previously entered in the application. 
     # By clicking on 'Currency' in the navigation bar of 
     # the dashboard.html, users can access a list of their recorded currencies.
-    currencies = Currency().objects.filter(user=request.user)
+    currencies = Currency.objects.filter(user=request.user)
     paginate = Paginator(currencies, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
@@ -436,18 +436,18 @@ def addCurrency(request):
     currencies = Currency.objects.filter(user=request.user)
     context = {'currencies': currencies,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
     if request.method == 'GET':
-        return render(request, 'moneymate/currencies/add_currencies.html', context)
+        return render(request, 'moneymate/currencies/add_currency.html', context)
 
     if request.method == 'POST':
         currency = request.POST['currency']
 
         if not currency:
-            return render(request, 'moneymate/currencies/add_currencies.html', context)
+            return render(request, 'moneymate/currencies/add_currency.html', context)
         abbreviation = request.POST['abbreviation']
         symbol = request.POST['symbol']
 
         if not symbol:
-            return render(request, 'moneymate/currencies/add_currencies.html', context)
+            return render(request, 'moneymate/currencies/add_currency.html', context)
 
         Currency.objects.create(user=request.user, currency=currency, abbreviation=abbreviation, symbol=symbol)
 
@@ -464,9 +464,9 @@ def editCurrency(request, id):
     currency = Currency.objects.get(pk=id)
     context = {'currency': currency,'values': currency, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance }
     if request.method == 'GET':
-        return render(request, 'moneymate/currencies/edit_currencies.html', context)
+        return render(request, 'moneymate/currencies/edit_currency.html', context)
     if request.method == 'POST':
-        currency = request.POST['currency']
+        currency_name = request.POST['currency']
 
         if not currency:
             return render(request, 'moneymate/currencies/edit_currency.html', context)
@@ -475,15 +475,15 @@ def editCurrency(request, id):
 
         if not abbreviation:
             return render(request, 'moneymate/currencies/edit_currency.html', context)
-
         currency.user = request.user
-        currency.currency = currency
+        currency.currency = currency_name
         currency.abbreviation = abbreviation
         currency.symbol = symbol
 
         currency.save()
 
-        return redirect('listCUrrencies')
+        return redirect('listCurrencies')
+
 
 @login_required
 def deleteCurrency(request, id):
