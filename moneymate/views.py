@@ -307,3 +307,91 @@ def deleteCategory(request, id):
     category.delete()
     return redirect('listCategories')
 
+
+#                        ORIGINS         ----------
+@login_required
+def viewOriginsList(request):
+    # This feature allows the user to review the origins
+    # they have previously entered in the application. 
+    # By clicking on 'Origin' in the navigation bar of 
+    # the dashboard.html, users can access a list of their recorded origins.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    origins = Origin.objects.filter(user=request.user)
+    paginate = Paginator(categories, 3)
+    number_of_page = request.GET.get('page')
+    page_object = paginate.get_page(number_of_page)
+    context = {'origins': origins, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
+    return render(request, 'moneymate/origins/list_origins.html', context)
+
+@login_required
+def addOrigin(request):
+    # This feature enables users to access their origins.
+    # By clicking on the appropriate button.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    origins = Origin.objects.filter(user=request.user)
+    context = {
+        'origins': origins,
+        'values': request.POST,
+        'totalExpenses': totalExpenses, 
+        'totalIncomes':totalIncomes, 
+        'balance':balance,
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/origins/add_origin.html', context)
+
+    if request.method == 'POST':
+        name = request.POST['name']
+
+        if not name:
+            return render(request, 'moneymate/origins/add_origin.html', context)
+
+        origin = Origin(name=name)
+        origin.user = request.user
+        origin.save()
+
+        return redirect('listOrigins')
+
+@login_required
+def editOrigin(request, id):
+    #The user will be able to edit origins.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+    origin = Origin.objects.get(pk=id)
+    context = {
+        'origin': origin,
+        'values': category,
+        'totalExpenses': totalExpenses, 
+        'totalIncomes':totalIncomes, 
+        'balance':balance,
+    }
+    if request.method == 'GET':
+        return render(request, 'moneymate/origins/edit_origin.html', context)
+    if request.method == 'POST':
+        name = request.POST['name']
+
+        if not name:
+            return render(request, 'moneymate/origins/edit_origin.html', context)
+
+        origin.name = name
+        origin.save()
+
+        return redirect('listOrigins')
+
+
+@login_required
+def deleteOrigin(request, id):
+    # The user will be able to delete the chosen origin.
+    origin = Origin.objects.get(pk=id)
+    origin.delete()
+    return redirect('listOrigins')
