@@ -53,7 +53,7 @@ def addExpense(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    categories = Category.objects.all()
+    categories = Category.objects.filter(user=request.user)
     context = {'categories': categories,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
     if request.method == 'GET':
         return render(request, 'moneymate/expenses/add_expense.html', context)
@@ -85,7 +85,7 @@ def editExpense(request, id):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     expense = Expense.objects.get(pk=id)
-    categories = Category.objects.all()
+    categories = Category.objects.filter(user=request.user)
     context = {'expense': expense,'values': expense,'categories': categories, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance }
     if request.method == 'GET':
         return render(request, 'moneymate/expenses/edit_expense.html', context)
@@ -134,7 +134,7 @@ def viewIncomesList(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    origins = Origin.objects.all()
+    origins = Origin.objects.filter(user=request.user)
     incomes = Income.objects.filter(user=request.user).order_by('-date')
     paginate = Paginator(incomes, 3)
     number_of_page = request.GET.get('page')
@@ -150,7 +150,7 @@ def addIncome(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    origins = Origin.objects.all()
+    origins = Origin.objects.filter(user=request.user)
     context = {'origins': origins,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance}
     if request.method == 'GET':
         return render(request, 'moneymate/incomes/add_income.html', context)
@@ -179,7 +179,7 @@ def editIncome(request, id):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     income = Income.objects.get(pk=id)
-    origins = Origin.objects.all()
+    origins = Origin.objects.filter(user=request.user)
     context = {
         'income': income,
         'values': income,
@@ -231,7 +231,7 @@ def viewCategoriesList(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    categories = Category.objects.all()
+    categories = Category.objects.filter(user=request.user)
     paginate = Paginator(categories, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
@@ -247,7 +247,7 @@ def addCategory(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    categories = Category.objects.all()
+    categories = Category.objects.filter(user=request.user)
     context = {
         'categories': categories,
         'values': request.POST,
@@ -264,7 +264,9 @@ def addCategory(request):
         if not name:
             return render(request, 'moneymate/categories/add_category.html', context)
 
-        Category.objects.create(name=name)
+        category = Category(name=name)
+        category.user = request.user
+        category.save()
 
         return redirect('listCategories')
 

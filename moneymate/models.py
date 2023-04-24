@@ -6,7 +6,7 @@ from django.utils.timezone import now
 
 # Create your models here:
 
-# This is the database for user expenses.
+# This is the database for expenses/categories.
 class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(default=now)
@@ -19,6 +19,7 @@ class Expense(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -26,7 +27,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-# This is the database for user incomes.
+# This is the database for incomes/ origins.
 class Income(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField(default=now)
@@ -39,6 +40,7 @@ class Income(models.Model):
 
 class Origin(models.Model):
     name = models.CharField(max_length=50)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = 'Origins'
@@ -46,3 +48,13 @@ class Origin(models.Model):
     def __str__(self):
         return self.name
 
+
+# This is the database for currencies.
+class Currency(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    currency = models.CharField(max_length=30)
+    abbreviation = models.CharField(max_length=10)
+    symbol = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.currency
