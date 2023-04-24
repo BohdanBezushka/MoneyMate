@@ -32,9 +32,7 @@ class OriginAdmin(admin.ModelAdmin):
 admin.site.register(Origin, OriginAdmin)
 admin.site.register(Income, IncomeAdmin)
 
-
 # Currency: 
-
 class CurrencyAdmin(admin.ModelAdmin):
     list_display = ('user', 'currency', 'abbreviation', 'symbol')
     list_filter = ('user', 'currency', 'abbreviation', 'symbol')
