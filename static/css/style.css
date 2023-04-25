@@ -403,3 +403,17 @@ a.nav-link{
     cursor: default;
 }
 
+/*                 delete button         */
+
+#delete-button {
+    background-color: #DC143C;
+    color: white;
+    transition: all 0.2s ease-in-out;
+   
+}
+
+#delete-button:hover {
+    border: 2px solid black;
+    transform: scale(1.1);
+    color: black;
+  }
