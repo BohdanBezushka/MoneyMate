@@ -642,13 +642,26 @@ def deleteCurrency(request, id):
     return redirect('listCurrencies')
 
 def chooseCurrency(request):
-    #The user can choose their preferred currency.
+    # The user can choose their preferred currency.
+    expensesAmount = Expense.objects.filter(user=request.user)
+    totalExpenses = sum(expense.amount for expense in expensesAmount)
+    incomesAmount = Income.objects.filter(user=request.user)
+    totalIncomes = sum(income.amount for income in incomesAmount)
+    balance = totalIncomes - totalExpenses
+
     if request.method == 'POST':
         currency_id = request.POST.get('currency')
         request.session['chosen_currency'] = currency_id
         currency = Currency.objects.get(pk=currency_id)
         currencies = Currency.objects.filter(user=request.user)
-        context = {'currency': currency, 'currencies': currencies}
+        context = {
+            'currency': currency,
+            'currencies': currencies,
+            'totalExpenses': totalExpenses,
+            'totalIncomes': totalIncomes,
+            'balance': balance,
+            'chosen_currency': currency,
+        }
         return render(request, 'moneymate/currencies/choose_currency.html', context)
     else:
         currencies = Currency.objects.filter(user=request.user)

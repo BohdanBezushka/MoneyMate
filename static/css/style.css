@@ -290,6 +290,54 @@ a.button.secondaryAction.forgot-password:hover {
 
 /*                 templates/moneymate/dashboard.html          */
 
+#add-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #DC143C;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+#add-expense:hover {
+    border: 4px solid whitesmoke;
+    transform: scale(1.1);
+}
+
+#add-income {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #228B22;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+#add-income:hover {
+    border: 4px solid whitesmoke;
+    transform: scale(1.1);
+}
+
+
+
 a.navbar-brand-img.img-dashboard {
     max-width: 300px;
 }

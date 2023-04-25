@@ -51,11 +51,11 @@
     <div class="btn-toolbar mb-2 mb-md-0 ">
       <div class="btn-group me-2">
         <a class="nav-link" href="{% url 'addExpense' %}">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="far fa-minus-square"></i> Add expense</button>
+          <button id="add-expense" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-minus"></i></button>
         </a>
 
         <a class="nav-link" href="{% url 'addIncome' %}">
-          <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-plus-square"></i> Add income</button>
+          <button id="add-income" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-plus"></i></button>
         </a>
       </div>
     </div>
@@ -68,15 +68,15 @@
   <div class="row">
     <div class="col">
       <h5>Expenses:</h5>
-        <button id="total-expenses" type="button" class="btn-no btn-outline-light-no">{{ totalExpenses }}{{ currency_symbol }}{{ currency.symbol }}</button>
+        <button id="total-expenses" type="button" class="btn-no btn-outline-light-no">{{ totalExpenses }}{{ currency_symbol }}</button>
     </div>
     <div class="col">
       <h5>Incomes:</h5>
-      <button id="total-incomes" type="button" class="btn-no btn-outline-light-no">{{ totalIncomes }}{{ currency_symbol }}{{ currency.symbol }}</button>
+      <button id="total-incomes" type="button" class="btn-no btn-outline-light-no">{{ totalIncomes }}{{ currency_symbol }}</button>
     </div>
     <div class="col">
       <h5>Balance:</h5>
-      <button id="balance-button" type="button" class="btn-no btn-outline-light-no">{{ balance }}{{ currency_symbol }}{{ currency.symbol }}</button>
+      <button id="balance-button" type="button" class="btn-no btn-outline-light-no">{{ balance }}{{ currency_symbol }}</button>
     </div>
   </div>
 </footer>
