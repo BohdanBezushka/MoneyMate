@@ -53,4 +53,5 @@ urlpatterns = [
     path('addcurrency/', views.addCurrency, name='addCurrency'),
     path('editcurrency/<int:id>', views.editCurrency, name='edit-currency'),
     path('deletecurrency/<int:id>', views.deleteCurrency, name='delete-currency'),
+    path('choosecurrency', views.chooseCurrency, name='choose-currency'),
 ]
