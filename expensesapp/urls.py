@@ -23,7 +23,7 @@ urlpatterns = [
     path('', views.homePage, name='base'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('accounts/', include('allauth.urls')),
-    
+
     # Create, read, update and delete EXPENSES:
     path('expenses/', views.viewExpensesList, name='listExpenses'),
     path('addexpense/', views.addExpense, name='addExpense'),
@@ -36,22 +36,28 @@ urlpatterns = [
     path('editincome/<int:id>', views.editIncome, name='edit-income'),
     path('deleteincome/<int:id>', views.deleteIncome, name='delete-income'),
 
-     # Create, read, update and delete CATEGORIES:
+    # Create, read, update and delete CATEGORIES:
     path('categories/', views.viewCategoriesList, name='listCategories'),
     path('addcategory/', views.addCategory, name='addCategory'),
     path('editcategory/<int:id>', views.editCategory, name='edit-category'),
-    path('deletecategory/<int:id>', views.deleteCategory, name='delete-category'),
+    path(
+        'deletecategory/<int:id>',
+        views.deleteCategory,
+        name='delete-category'),
 
-      # Create, read, update and delete Origins:
+    # Create, read, update and delete Origins:
     path('origins/', views.viewOriginsList, name='listOrigins'),
     path('addorigin/', views.addOrigin, name='addOrigin'),
     path('editorigin/<int:id>', views.editOrigin, name='edit-origin'),
     path('deleteorigin/<int:id>', views.deleteOrigin, name='delete-origin'),
 
-     # Create, read, update and delete Currencies:
+    # Create, read, update and delete Currencies:
     path('currencies/', views.viewCurrenciesList, name='listCurrencies'),
     path('addcurrency/', views.addCurrency, name='addCurrency'),
     path('editcurrency/<int:id>', views.editCurrency, name='edit-currency'),
-    path('deletecurrency/<int:id>', views.deleteCurrency, name='delete-currency'),
+    path(
+        'deletecurrency/<int:id>',
+        views.deleteCurrency,
+        name='delete-currency'),
     path('choosecurrency', views.chooseCurrency, name='choose-currency'),
 ]

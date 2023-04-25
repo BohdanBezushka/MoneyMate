@@ -1,55 +1,52 @@
-{% extends "moneymate/dashboard.html" %}
-{% load static %}
-
-{% block expenses_incomes %}
+{% extends "moneymate/dashboard.html" %} {% load static %} {% block expenses_incomes %}
 <!--The user can choose to add an expense or income-->
 <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-  <div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">
-      <span id="info-dashboard" class="nav-link">Edit expense:</span>
-    </h1>
-    <div class="btn-toolbar mb-2 mb-md-0 ">
-      <div class="btn-group me-2">
-        <a class="nav-link" href="{% url 'addExpense' %}">
-          <button id="add-expense" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-minus"></i></button>
-        </a>
+	<div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">
+			<span id="info-dashboard" class="nav-link">Edit expense:</span>
+		</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+			<div class="btn-group me-2">
+				<a class="nav-link" href="{% url 'addExpense' %}">
+					<button id="add-expense" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-minus"></i></button>
+				</a>
 
-        <a class="nav-link" href="{% url 'addIncome' %}">
-          <button id="add-income" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-plus"></i></button>
-        </a>
-      </div>
-    </div>
-  </div>
+				<a class="nav-link" href="{% url 'addIncome' %}">
+					<button id="add-income" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-plus"></i></button>
+				</a>
+			</div>
+		</div>
+	</div>
 </main>
 
 <div class="card m-3">
-    <div class="card-body">
-      <form action="{% url 'edit-expense' expense.id %}" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="date">Date of Expense:</label>
-          <input type="date" class="form-control" name="date" id="date" value="{{ expense.date|date:'Y-m-d' }}" required>
-        </div>
-        <div class="form-group">
-          <label for="amount">Amount:</label>
-          <input type="number" step="0.01" max="9999999999.99" class="form-control" name="amount" id="amount" value="{{values.amount}}" required>
-        </div>
-        <div class="form-group">
-          <label for="category">Category:</label>
-          <select class="form-control" name="category" id="category" required>
-            <option selected value="{{values.category}}">{{values.category}}</option>
-            {% for category in categories %}
-            <option value="{{category.name}}">{{category.name}}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <input type="text" class="form-control" name="description" id="description" value="{{values.description}}">
-        </div>
-        <button type="submit" value="update" class="btn btn-primary">Update</button>
-      </form>
-    </div>
-  </div>
-  
+	<div class="card-body">
+		<form action="{% url 'edit-expense' expense.id %}" method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="date">Date of Expense:</label>
+				<input type="date" class="form-control" name="date" id="date" value="{{ expense.date|date:'Y-m-d' }}" required />
+			</div>
+			<div class="form-group">
+				<label for="amount">Amount:</label>
+				<input type="number" step="0.01" max="9999999999.99" class="form-control" name="amount" id="amount" value="{{values.amount}}" required />
+			</div>
+			<div class="form-group">
+				<label for="category">Category:</label>
+				<select class="form-control" name="category" id="category" required>
+					<option selected value="{{values.category}}">{{values.category}}</option>
+					{% for category in categories %}
+					<option value="{{category.name}}">{{category.name}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="description">Description:</label>
+				<input type="text" class="form-control" name="description" id="description" value="{{values.description}}" />
+			</div>
+			<button type="submit" value="update" class="btn btn-primary">Update</button>
+		</form>
+	</div>
+</div>
+
 {% endblock %}

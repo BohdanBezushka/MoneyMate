@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 
 from django.utils.timezone import now
 
-# Create your models here:
 
+# Create your models here:
 # This is the database for expenses/categories.
 class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -17,6 +17,7 @@ class Expense(models.Model):
     def __str__(self):
         return self.category
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -26,6 +27,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
 # This is the database for incomes/ origins.
 class Income(models.Model):
@@ -37,6 +39,7 @@ class Income(models.Model):
 
     def __str__(self):
         return self.origin
+
 
 class Origin(models.Model):
     name = models.CharField(max_length=50)

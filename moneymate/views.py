@@ -8,45 +8,51 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here:
-
 def homePage(request):
     # This is the main page that will be displayed to the user.
-    # The function has been exported to the 'expensesapp' 
+    # The function has been exported to the 'expensesapp'
     # project in the 'urls.py' file in order to visualize the HTML content.
     return render(request, 'moneymate/base.html')
 
+
 @login_required
 def dashboard(request):
-    # When the user logs in or registers, he/she will be taken 
+    # When the user logs in or registers, he/she will be taken
     # directly to the templates/moneymate/dashboard.html file.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
-    
     expensesAmount = Expense.objects.filter(user=request.user)
     totalExpenses = sum(expense.amount for expense in expensesAmount)
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    context = {'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     return render(request, 'moneymate/dashboard.html', context)
 
-#                        EXPENSES            ----------
 
+#                        EXPENSES            ----------
 @login_required
 def viewExpensesList(request):
     # This feature allows the user to review the expenses
-    # they have previously entered in the application. 
-    # By clicking on 'Expenses' in the navigation bar of 
+    # they have previously entered in the application.
+    # By clicking on 'Expenses' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded expenses.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -63,8 +69,15 @@ def viewExpensesList(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    context = {'expenses': expenses, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'expenses': expenses,
+        'page_object': page_object,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol}
     return render(request, 'moneymate/expenses/list_expenses.html', context)
+
 
 @login_required
 def addExpense(request):
@@ -72,7 +85,8 @@ def addExpense(request):
     # By clicking on the appropriate button
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -85,7 +99,14 @@ def addExpense(request):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     categories = Category.objects.filter(user=request.user)
-    context = {'categories': categories,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'categories': categories,
+        'values': request.POST,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     if request.method == 'GET':
         return render(request, 'moneymate/expenses/add_expense.html', context)
 
@@ -94,26 +115,42 @@ def addExpense(request):
 
         if not amount:
             messages.error(request, 'Amount is required.')
-            return render(request, 'moneymate/expenses/add_expense.html', context)
+            return render(
+                request,
+                'moneymate/expenses/add_expense.html',
+                context
+                )
         description = request.POST['description']
         date = request.POST['date']
         category = request.POST['category']
 
         if not description:
             messages.error(request, 'Description is required.')
-            return render(request, 'moneymate/expenses/add_expense.html', context)
+            return render(
+                request,
+                'moneymate/expenses/add_expense.html',
+                context
+                )
 
-        Expense.objects.create(user=request.user, amount=amount, date=date,category=category, description=description)
+        Expense.objects.create(
+            user=request.user,
+            amount=amount,
+            date=date,
+            category=category,
+            description=description
+            )
         messages.success(request, 'Expense saved successfully.')
 
         return redirect('listExpenses')
 
+
 @login_required
 def editExpense(request, id):
-    #The user will be able to edit the chosen expense.
+    # The user will be able to edit the chosen expense.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -127,7 +164,15 @@ def editExpense(request, id):
     balance = totalIncomes - totalExpenses
     expense = Expense.objects.get(pk=id)
     categories = Category.objects.filter(user=request.user)
-    context = {'expense': expense,'values': expense,'categories': categories, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol }
+    context = {
+        'expense': expense,
+        'values': expense,
+        'categories': categories,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     if request.method == 'GET':
         return render(request, 'moneymate/expenses/edit_expense.html', context)
     if request.method == 'POST':
@@ -135,14 +180,22 @@ def editExpense(request, id):
 
         if not amount:
             messages.error(request, 'Amount is required.')
-            return render(request, 'moneymate/expenses/edit_expense.html', context)
+            return render(
+                request,
+                'moneymate/expenses/edit_expense.html',
+                context
+                )
         description = request.POST['description']
         date = request.POST['date']
         category = request.POST['category']
 
         if not description:
             messages.error(request, 'Description is required.')
-            return render(request, 'moneymate/expenses/edit_expense.html', context)
+            return render(
+                request,
+                'moneymate/expenses/edit_expense.html',
+                context
+                )
 
         expense.user = request.user
         expense.amount = amount
@@ -154,6 +207,7 @@ def editExpense(request, id):
         messages.success(request, 'Expense updated  successfully.')
 
         return redirect('listExpenses')
+
 
 @login_required
 def deleteExpense(request, id):
@@ -168,12 +222,13 @@ def deleteExpense(request, id):
 @login_required
 def viewIncomesList(request):
     # This feature allows the user to review the incomes
-    # they have previously entered in the application. 
-    # By clicking on 'Incomes' in the navigation bar of 
+    # they have previously entered in the application.
+    # By clicking on 'Incomes' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded incomes.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -190,8 +245,16 @@ def viewIncomesList(request):
     paginate = Paginator(incomes, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
-    context = {'incomes': incomes, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'incomes': incomes,
+        'page_object': page_object,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     return render(request, 'moneymate/incomes/list_incomes.html', context)
+
 
 @login_required
 def addIncome(request):
@@ -199,7 +262,8 @@ def addIncome(request):
     # By clicking on the appropriate button.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -212,7 +276,14 @@ def addIncome(request):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     origins = Origin.objects.filter(user=request.user)
-    context = {'origins': origins,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'origins': origins,
+        'values': request.POST,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     if request.method == 'GET':
         return render(request, 'moneymate/incomes/add_income.html', context)
 
@@ -220,24 +291,38 @@ def addIncome(request):
         amount = request.POST['amount']
 
         if not amount:
-            return render(request, 'moneymate/incomes/add_income.html', context)
+            return render(
+                request,
+                'moneymate/incomes/add_income.html',
+                context
+                )
         description = request.POST['description']
         date = request.POST['date']
         origin = request.POST['origin']
 
         if not description:
-            return render(request, 'moneymate/incomes/add_income.html', context)
+            return render(
+                request,
+                'moneymate/incomes/add_income.html',
+                context)
 
-        Income.objects.create(user=request.user, amount=amount, date=date, origin=origin, description=description)
+        Income.objects.create(
+            user=request.user,
+            amount=amount,
+            date=date,
+            origin=origin,
+            description=description)
 
         return redirect('listIncomes')
 
+
 @login_required
 def editIncome(request, id):
-    #The user will be able to edit the chosen income.
+    # The user will be able to edit the chosen income.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -255,9 +340,9 @@ def editIncome(request, id):
         'income': income,
         'values': income,
         'origins': origins,
-        'totalExpenses': totalExpenses, 
-        'totalIncomes':totalIncomes, 
-        'balance':balance,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
         'currency_symbol': currency_symbol,
     }
     if request.method == 'GET':
@@ -266,13 +351,21 @@ def editIncome(request, id):
         amount = request.POST['amount']
 
         if not amount:
-            return render(request, 'moneymate/incomes/edit_income.html', context)
+            return render(
+                request,
+                'moneymate/incomes/edit_income.html',
+                context
+                )
         description = request.POST['description']
         date = request.POST['date']
         origin = request.POST['origin']
 
         if not description:
-            return render(request, 'moneymate/incomes/edit_income.html', context)
+            return render(
+                request,
+                'moneymate/incomes/edit_income.html',
+                context
+                )
 
         income.user = request.user
         income.amount = amount
@@ -283,6 +376,7 @@ def editIncome(request, id):
         income.save()
 
         return redirect('listIncomes')
+
 
 @login_required
 def deleteIncome(request, id):
@@ -296,12 +390,13 @@ def deleteIncome(request, id):
 @login_required
 def viewCategoriesList(request):
     # This feature allows the user to review the categories
-    # they have previously entered in the application. 
-    # By clicking on 'Categiry' in the navigation bar of 
+    # they have previously entered in the application.
+    # By clicking on 'Categiry' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded categories.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -317,8 +412,19 @@ def viewCategoriesList(request):
     paginate = Paginator(categories, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
-    context = {'categories': categories, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
-    return render(request, 'moneymate/categories/list_categories.html', context)
+    context = {
+        'categories': categories,
+        'page_object': page_object,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
+    return render(
+        request,
+        'moneymate/categories/list_categories.html',
+        context)
+
 
 @login_required
 def addCategory(request):
@@ -326,7 +432,8 @@ def addCategory(request):
     # By clicking on the appropriate button.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -342,19 +449,27 @@ def addCategory(request):
     context = {
         'categories': categories,
         'values': request.POST,
-        'totalExpenses': totalExpenses, 
-        'totalIncomes':totalIncomes, 
-        'balance':balance,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
         'currency_symbol': currency_symbol,
     }
     if request.method == 'GET':
-        return render(request, 'moneymate/categories/add_category.html', context)
+        return render(
+            request,
+            'moneymate/categories/add_category.html',
+            context
+            )
 
     if request.method == 'POST':
         name = request.POST['name']
 
         if not name:
-            return render(request, 'moneymate/categories/add_category.html', context)
+            return render(
+                request,
+                'moneymate/categories/add_category.html',
+                context
+                )
 
         category = Category(name=name)
         category.user = request.user
@@ -362,12 +477,14 @@ def addCategory(request):
 
         return redirect('listCategories')
 
+
 @login_required
 def editCategory(request, id):
-    #The user will be able to edit the chategory income.
+    # The user will be able to edit the chategory income.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -383,18 +500,24 @@ def editCategory(request, id):
     context = {
         'category': category,
         'values': category,
-        'totalExpenses': totalExpenses, 
-        'totalIncomes':totalIncomes, 
-        'balance':balance,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
         'currency_symbol': currency_symbol,
     }
     if request.method == 'GET':
-        return render(request, 'moneymate/categories/edit_category.html', context)
+        return render(
+            request,
+            'moneymate/categories/edit_category.html',
+            context)
     if request.method == 'POST':
         name = request.POST['name']
 
         if not name:
-            return render(request, 'moneymate/categories/edit_category.html', context)
+            return render(
+                request,
+                'moneymate/categories/edit_category.html',
+                context)
 
         category.name = name
         category.save()
@@ -414,12 +537,13 @@ def deleteCategory(request, id):
 @login_required
 def viewOriginsList(request):
     # This feature allows the user to review the origins
-    # they have previously entered in the application. 
-    # By clicking on 'Origin' in the navigation bar of 
+    # they have previously entered in the application.
+    # By clicking on 'Origin' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded origins.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -435,8 +559,16 @@ def viewOriginsList(request):
     paginate = Paginator(origins, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
-    context = {'origins': origins, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'origins': origins,
+        'page_object': page_object,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     return render(request, 'moneymate/origins/list_origins.html', context)
+
 
 @login_required
 def addOrigin(request):
@@ -444,7 +576,8 @@ def addOrigin(request):
     # By clicking on the appropriate button.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -460,9 +593,9 @@ def addOrigin(request):
     context = {
         'origins': origins,
         'values': request.POST,
-        'totalExpenses': totalExpenses, 
-        'totalIncomes':totalIncomes, 
-        'balance':balance,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
         'currency_symbol': currency_symbol,
     }
     if request.method == 'GET':
@@ -472,7 +605,11 @@ def addOrigin(request):
         name = request.POST['name']
 
         if not name:
-            return render(request, 'moneymate/origins/add_origin.html', context)
+            return render(
+                request,
+                'moneymate/origins/add_origin.html',
+                context
+                )
 
         origin = Origin(name=name)
         origin.user = request.user
@@ -480,12 +617,14 @@ def addOrigin(request):
 
         return redirect('listOrigins')
 
+
 @login_required
 def editOrigin(request, id):
-    #The user will be able to edit origins.
+    # The user will be able to edit origins.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,ç
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -501,9 +640,9 @@ def editOrigin(request, id):
     context = {
         'origin': origin,
         'values': origin,
-        'totalExpenses': totalExpenses, 
-        'totalIncomes':totalIncomes, 
-        'balance':balance,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
         'currency_symbol': currency_symbol,
     }
     if request.method == 'GET':
@@ -512,7 +651,11 @@ def editOrigin(request, id):
         name = request.POST['name']
 
         if not name:
-            return render(request, 'moneymate/origins/edit_origin.html', context)
+            return render(
+                request,
+                'moneymate/origins/edit_origin.html',
+                context
+                )
 
         origin.name = name
         origin.save()
@@ -527,17 +670,18 @@ def deleteOrigin(request, id):
     origin.delete()
     return redirect('listOrigins')
 
-#                          CURRENCIES                   ----------
 
+#                          CURRENCIES                   ----------
 @login_required
 def viewCurrenciesList(request):
     # This feature allows the user to review the currencies
-    # they have previously entered in the application. 
-    # By clicking on 'Currency' in the navigation bar of 
+    # they have previously entered in the application.
+    # By clicking on 'Currency' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded currencies.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -553,8 +697,19 @@ def viewCurrenciesList(request):
     incomesAmount = Income.objects.filter(user=request.user)
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
-    context = {'currencies': currencies, 'page_object': page_object, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
-    return render(request, 'moneymate/currencies/list_currencies.html', context)
+    context = {
+        'currencies': currencies,
+        'page_object': page_object,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol}
+    return render(
+        request,
+        'moneymate/currencies/list_currencies.html',
+        context
+        )
+
 
 @login_required
 def addCurrency(request):
@@ -562,7 +717,8 @@ def addCurrency(request):
     # By clicking on the appropriate button.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -575,31 +731,57 @@ def addCurrency(request):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     currencies = Currency.objects.filter(user=request.user)
-    context = {'currencies': currencies,'values': request.POST, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol}
+    context = {
+        'currencies': currencies,
+        'values': request.POST,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     if request.method == 'GET':
-        return render(request, 'moneymate/currencies/add_currency.html', context)
+        return render(
+            request,
+            'moneymate/currencies/add_currency.html',
+            context
+            )
 
     if request.method == 'POST':
         currency = request.POST['currency']
 
         if not currency:
-            return render(request, 'moneymate/currencies/add_currency.html', context)
+            return render(
+                request,
+                'moneymate/currencies/add_currency.html',
+                context
+                )
         abbreviation = request.POST['abbreviation']
         symbol = request.POST['symbol']
 
         if not symbol:
-            return render(request, 'moneymate/currencies/add_currency.html', context)
+            return render(
+                request,
+                'moneymate/currencies/add_currency.html',
+                context
+                )
 
-        Currency.objects.create(user=request.user, currency=currency, abbreviation=abbreviation, symbol=symbol)
+        Currency.objects.create(
+            user=request.user,
+            currency=currency,
+            abbreviation=abbreviation,
+            symbol=symbol
+            )
 
         return redirect('listCurrencies')
 
+
 @login_required
 def editCurrency(request, id):
-    #The user will be able to edit the chosen currency.
+    # The user will be able to edit the chosen currency.
 
     chosen_currency_id = request.session.get('chosen_currency')
-    #Currency chosen by the user. If none is chosen, then the euro will be displayed.
+    # Currency chosen by the user. If none is chosen,
+    # then the euro will be displayed.
     if chosen_currency_id:
         chosen_currency = Currency.objects.get(pk=chosen_currency_id)
         currency_symbol = chosen_currency.symbol
@@ -612,19 +794,38 @@ def editCurrency(request, id):
     totalIncomes = sum(income.amount for income in incomesAmount)
     balance = totalIncomes - totalExpenses
     currency = Currency.objects.get(pk=id)
-    context = {'currency': currency,'values': currency, 'totalExpenses': totalExpenses, 'totalIncomes':totalIncomes, 'balance':balance, 'currency_symbol': currency_symbol }
+    context = {
+        'currency': currency,
+        'values': currency,
+        'totalExpenses': totalExpenses,
+        'totalIncomes': totalIncomes,
+        'balance': balance,
+        'currency_symbol': currency_symbol
+        }
     if request.method == 'GET':
-        return render(request, 'moneymate/currencies/edit_currency.html', context)
+        return render(
+            request,
+            'moneymate/currencies/edit_currency.html',
+            context
+            )
     if request.method == 'POST':
         currency_name = request.POST['currency']
 
         if not currency:
-            return render(request, 'moneymate/currencies/edit_currency.html', context)
+            return render(
+                request,
+                'moneymate/currencies/edit_currency.html',
+                context
+                )
         abbreviation = request.POST['abbreviation']
         symbol = request.POST['symbol']
 
         if not abbreviation:
-            return render(request, 'moneymate/currencies/edit_currency.html', context)
+            return render(
+                request,
+                'moneymate/currencies/edit_currency.html',
+                context
+                )
         currency.user = request.user
         currency.currency = currency_name
         currency.abbreviation = abbreviation
@@ -641,6 +842,7 @@ def deleteCurrency(request, id):
     currency = Currency.objects.get(pk=id)
     currency.delete()
     return redirect('listCurrencies')
+
 
 def chooseCurrency(request):
     # The user can choose their preferred currency.
@@ -663,8 +865,16 @@ def chooseCurrency(request):
             'balance': balance,
             'chosen_currency': currency,
         }
-        return render(request, 'moneymate/currencies/choose_currency.html', context)
+        return render(
+            request,
+            'moneymate/currencies/choose_currency.html',
+            context
+            )
     else:
         currencies = Currency.objects.filter(user=request.user)
         context = {'currencies': currencies}
-        return render(request, 'moneymate/currencies/choose_currency.html', context)
+        return render(
+            request,
+            'moneymate/currencies/choose_currency.html',
+            context
+            )

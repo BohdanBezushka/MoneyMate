@@ -1,34 +1,31 @@
-{% extends "moneymate/dashboard.html" %}
-{% load static %}
-
-{% block expenses_incomes %}
+{% extends "moneymate/dashboard.html" %} {% load static %} {% block expenses_incomes %}
 <!--The user can choose to add an expense or income-->
 <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-  <div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">
-      <span id="info-dashboard" class="nav-link">Edit category:</span>
-    </h1>
-    <div class="btn-toolbar mb-2 mb-md-0 ">
-      <div class="btn-group me-2">
-        <a class="nav-link" href="{% url 'addCategory' %}">
+	<div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">
+			<span id="info-dashboard" class="nav-link">Edit category:</span>
+		</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+			<div class="btn-group me-2">
+				<a class="nav-link" href="{% url 'addCategory' %}">
 					<button type="button" class="btn btn-sm btn-outline-secondary">Add category</button>
 				</a>
-      </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
 </main>
 
 <div class="card m-3">
-    <div class="card-body">
-        <form action="{% url 'edit-category' category.id %}" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="name">Name of category:</label>
-                <input type="name" class="form-control" name="name" id="name" value="{{ category.name}}" required>
-            </div>
-            <button type="submit" value="update" class="btn btn-primary">Update</button>
-        </form>
-    </div>
-  </div>
-  
+	<div class="card-body">
+		<form action="{% url 'edit-category' category.id %}" method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="name">Name of category:</label>
+				<input type="name" class="form-control" name="name" id="name" value="{{ category.name}}" required />
+			</div>
+			<button type="submit" value="update" class="btn btn-primary">Update</button>
+		</form>
+	</div>
+</div>
+
 {% endblock %}

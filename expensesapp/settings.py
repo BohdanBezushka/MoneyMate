@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-#Import env.py file:
+# Import env.py file:
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -52,13 +52,14 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-#ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
 
 # If a user logs in or registers, they will be redirected to the dashboard.
 LOGIN_REDIRECT_URL = 'dashboard'
 SIGNUP_REDIRECT_URL = 'dashboard'
 
-# When the user logs out, they will automatically be redirected to the commercial page (base.html).
+# When the user logs out, they will automatically be redirected
+# to the commercial page (base.html).
 LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
@@ -100,7 +101,7 @@ WSGI_APPLICATION = 'expensesapp.wsgi.application'
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 # Connect Database
 DATABASES = {
@@ -146,7 +147,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
