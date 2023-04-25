@@ -13,6 +13,9 @@
       <a class="navbar-brand-img img-dashboard" href="{% url 'dashboard' %}"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate-Dark.png' %}" alt="Brand:MoneyMate" /></a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item links-dashboard">
+          <a class="nav-link " href="{% url 'dashboard' %}">Menu</a>
+        </li>
+        <li class="nav-item links-dashboard">
           <a class="nav-link " href="{% url 'listExpenses' %}">Expenses</a>
         </li>
         <li class="nav-item links-dashboard">
@@ -30,7 +33,7 @@
       </ul>
       <form class="d-flex" role="search">
         <a class="nav-link" href="{% url 'account_logout' %}">
-          <button class="buttons btn btn-outline-success me-2" type="button">Sign out</button>
+          <button class="buttons btn btn-outline me-2" type="button">Sign out</button>
         </a>
       </form>
     </div>
@@ -64,7 +67,7 @@
 
 {% endblock %}
 
-<footer class="container-fluid bg-dark text-white text-center py-3 fixed-bottom">
+<footer id="result-footer" class="container bg-dark text-white text-center py-3 ">
   <div class="row">
     <div class="col-sm-12 col-md">
       <h5>Expenses:</h5>

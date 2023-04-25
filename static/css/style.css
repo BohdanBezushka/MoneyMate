@@ -23,11 +23,13 @@ body{
 
 h1{
     font-weight: 800;
+    text-align: center;
 }
 
 h2 {
     font-size: 2.6rem;
     font-weight: 800;
+    text-align: center;
 }
 
 p{
@@ -35,6 +37,7 @@ p{
 }
 
 /*Navigation bar*/
+
 .navbar{
     background:white;
     font-size: 1.2rem;
@@ -403,6 +406,14 @@ a.nav-link{
     cursor: default;
 }
 
+#result-footer {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #343a40;
+  }
+
 /*                 delete button         */
 
 #delete-button {
@@ -417,3 +428,40 @@ a.nav-link{
     transform: scale(1.1);
     color: black;
   }
+
+/* Media queries */
+
+/* For large to medium screens sizes from 1240px wide and down */
+
+@media screen and (max-width: 1120px) {
+    a.navbar-brand {
+        height: 50%;
+        width: 50%;
+    }
+
+    img#page-start.img-nav {
+        height: 50%;
+        width: 50%;
+    }
+
+    img.img-bottom {
+        display: block;
+        margin: auto;
+    }
+}
+
+/* For medium to small screens sizes from 767px wide and down */
+
+@media screen and (max-width: 767px) {
+    #add-reverse .row{
+        flex-direction: column-reverse;
+    }
+
+    img.img-bottom {
+        height: 80%;
+        width: 80%;
+        display: block;
+        margin: auto;
+    }
+}
+
