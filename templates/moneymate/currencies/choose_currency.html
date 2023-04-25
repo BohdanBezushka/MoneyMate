@@ -1,0 +1,24 @@
+{% extends "moneymate/dashboard.html" %}
+{% load static %}
+
+{% block expenses_incomes %}
+<!--The user can choose to add an expense or income-->
+<main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+  <div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">
+      <span id="info-dashboard" class="nav-link">Choose currency:</span>
+    </h1>
+</main>
+
+<form action="{% url 'choose-currency' %}" method="POST">
+    {% csrf_token %}
+    <label for="currency">Elige tu divisa:</label>
+    <select name="currency" id="currency">
+        {% for currency in currencies %}
+            <option value="{{ currency.pk }}">{{ currency.symbol }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Guardar">
+</form>
+  
+{% endblock %}
