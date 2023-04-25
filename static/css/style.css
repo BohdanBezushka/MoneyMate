@@ -336,8 +336,6 @@ a.button.secondaryAction.forgot-password:hover {
     transform: scale(1.1);
 }
 
-
-
 a.navbar-brand-img.img-dashboard {
     max-width: 300px;
 }
@@ -361,14 +359,15 @@ a.nav-link{
 
 #control-dashboard{
     border-radius: 10px;
-    border: 2px solid black;
-    margin: 5px;
+    margin: 4px;
     background: #212529;
+    height: auto;
 }
 
 #info-dashboard{
     color: white;
     padding: 5px;
+    text-decoration: none;
 }
 
 #total-expenses {
