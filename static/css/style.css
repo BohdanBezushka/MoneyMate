@@ -412,7 +412,13 @@ a.nav-link{
     margin: 0 auto;
     margin-bottom: 10px;
     background-color: #343a40;
-  }
+}
+
+.alert.alert-info {
+    color: white;
+    background-color: #5d21d5;
+}
+
 
 /*                 delete button         */
 
