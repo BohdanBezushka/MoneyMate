@@ -1,6 +1,6 @@
 # **MoneyMate** 💰 🟪
 
-[*Live link to website.*](https://moneymate.herokuapp.com/)
+[*Link to the live website.*](https://moneymate.herokuapp.com/)
 
 MoneyMate is a full-stack, responsive website built for users who want to keep track of their expenses
 
@@ -14,6 +14,12 @@ _________
   * [Site Goals](#Site-goals)
   * [User Stories](#User-Stories)
   * [Design](#Design)
+    * [Colour Scheme](#Colour-Scheme)
+    * [Icons](#Icons)
+    * [Typography](#Typography)
+    * [Wireframes](#Wireframes)
+    * [Flowchart](#Flowchart)
+    * [Database Schema](#Database-Schema)
 * [Flowchart](#Flowchart)
 * [Colour Scheme](#Colour-Scheme)
 * [Database structure](###Database-structure)
@@ -132,24 +138,92 @@ This section aims to determine what a user would expect from interacting with th
 
 ### Design
 
+#### Colour Scheme
+
+![MoneyMate Colors](https://user-images.githubusercontent.com/94321555/235207100-a1a4a31d-9a59-4caf-af17-1ee9992c4db1.png)
+
+* The color `#5D21D5` is the main color of the project, and we want the user to identify it as the brand's own color. It is predominantly used on the first page that the user sees to add color to the backgrounds, text, and buttons. It is also used for the login, logout, and new account pages. Lastly, for the dashboard, I have reduced the use of this color and limited it only to certain buttons and the logo.
+* The color `#FFD700` has little presence, only being used for the dashboard menu bar on the CSS hover effect.
+* The color `#212529` has been used to provide a background for the sections of the dashboard. It is a color that helps the text and buttons stand out.
+* The color `#228B22` is used for the '+' button and added as the background for the button that displays the total income.
+* The color `#DC143C` is used for the '-' button and is also added as a background for the button indicating the total expenses.
+
+#### Typography
+
+The typography used throughout the project is 'Sen' because it is a versatile typeface that works well for both display and body text. Different weights and styles of 'Sen' are used in the project to distinguish more important parts from others or to highlight specific text.
+
+![Google Fonts](https://user-images.githubusercontent.com/94321555/235213496-d0ddc9e5-20df-4927-9211-a8b866f3889e.png)
+
+#### Icons
+
+[Font Awesome](https://fontawesome.com/) social media icons were used for the Footer. They are used as interactive links and have an aria-label which gives the relevant information to screen readers to read out to the users. 
+
+#### Wireframes
+
+Below you can see the wireframes for the project. I decided to add corresponding styles and text to the wireframes, which made it quicker to write the HTML and CSS. The wireframes correspond to a laptop screen, and thanks to Bootstrap, it was almost unnecessary to write code for the different media queries.
 
 
+<details>
+<summary>MoneyMate Wireframes</summary>
 
+        MoneyMate introduction page
+![MoneyMate-PC](https://user-images.githubusercontent.com/94321555/235217241-13b415c1-1c6b-4736-a0c5-3e7f166fd44e.png)
 
+        Login
+![MoneyMate-Login](https://user-images.githubusercontent.com/94321555/235217717-30983e91-a681-4131-ac75-79565337e4bc.png)
 
+        Sign up
+![MoneyMate-Sign-up](https://user-images.githubusercontent.com/94321555/235217868-ad533bc0-f3e0-4e33-b2f0-bff1d58de22a.png)
 
+        Dashboard
+![MoneyMate-Panel](https://user-images.githubusercontent.com/94321555/235217976-cda912c2-76e2-42d4-b07e-324cfde8d0d8.png)
 
+</details>
 
+#### Flowchart
 
+I created this flowchart prior to writing my code to have a clear understanding of the necessary implementation while programming. It effectively outlines the program's layout and structure, including where user input is required, where input validation occurs, and how to handle invalid input. The flowchart was created usingg [Miro](https://miro.com/). Next, you can go directly to Miro and view the diagram. I haven't included a screenshot because the free version doesn't allow downloading high-resolution files: [MoneyMate Flowchart](https://miro.com/app/live-embed/uXjVMOsZVtI=/?moveToViewport=-4505,-2258,8056,3786&embedId=182857515834)
 
+#### Database Schema
+I had trouble creating the database in this part because I wasn't sure what I would need for the project. In the following lines, a screenshot of the previous database schema will be shown, and then the current database will be displayed.
 
+![MoneyMate database schema](https://user-images.githubusercontent.com/94321555/235221786-eb5010a1-fb0f-407a-a671-ed7e1539ea19.png)
 
+The current Database Schema used for this project, four custom models have been implemented:
 
+**The Expense Model** has a one-to-one relationship with the Django's User Model and consists of:
 
+    - user
+    - date
+    - amount
+    - category
+    - description
 
+**The Income Model** has a one-to-one relationship with the Django's User Model and consists of:
 
+    - user
+    - date
+    - amount
+    - origin
+    - description
+    
+**The Category Model** has a one-to-one relationship with the Django's User Model and consists of:
 
+    - name
+    - user
 
+**The Origin Model** has a one-to-one relationship with the Django's User Model and consists of:
 
+    - name
+    - user
+
+**The Currency Model** has a one-to-one relationship with the Django's User Model and consists of (not currently used due to a bug issue):
+
+    - user
+    - currency
+    - abbreviation
+    - symbol
+    
+  [Back To Top](#table-of-contents)
 
 
