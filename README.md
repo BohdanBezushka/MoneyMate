@@ -2,7 +2,7 @@
 
 [*Link to the live website.*](https://moneymate.herokuapp.com/)
 
-MoneyMate is a full-stack, responsive website built for users who want to keep track of their expenses
+MoneyMate is a full-stack, responsive website built for users who want to keep track of their expenses.
 
 This project focuses on providing users with an application for recording their expenses and saving money. To add a new expense or income, the user enters the date, amount, category or source, and can optionally add a description. The app constantly displays the user's total expenses, income, and balance.
 
@@ -23,8 +23,15 @@ _________
 * [Features](#Features)
   * [Favicon](#Favicon)
   * [Introduction page](#Introduction-page)
-  * [Option 2](#Option-2)
-  * [Features Left to Implement](#Features-Left-to-Implement)
+  * [Dashboard](#Dashboard)
+  * [Login](#Login)
+  * [Sign up](#Sign-up)
+  * [Sign out](#Sign-out)
+  * [Admin Panel](#Admin-Panel)
+  
+  
+  
+  
 * [Technologies Used](#Technologies-Used)
   * [Languages](#Languages)
   * [Software](#Software)
@@ -350,4 +357,142 @@ The dashboard is what the user will see when they log in or register as a new us
 ![Edit category](https://user-images.githubusercontent.com/94321555/235273922-6e86932a-9e3e-4add-a75c-01a94148d922.png)
 
 </details>
+
+
+<details>
+<summary>Screenshots of the Dashboard/Origin</summary>
+
+        Without origins
+![Without origins](https://user-images.githubusercontent.com/94321555/235276431-3ccbc4d3-c1c9-4f98-a24a-9a6df6d4a902.png)
+
+        With origins
+![With origins](https://user-images.githubusercontent.com/94321555/235275626-4c1de615-cd61-4ef3-a5a5-fef048dd0c38.png)
+
+        Add origin
+![Add origin](https://user-images.githubusercontent.com/94321555/235275893-0eaa7be6-f89f-44f9-9301-ca2011aff983.png)
+
+        Edit origin
+![Edit origin](https://user-images.githubusercontent.com/94321555/235276199-8d63eab8-2516-49be-af2c-ad26b265f0b1.png)
+
+</details>
+
+
+### Login
+
+A user can log in via the "Login" button on the home page. The login page has the MoneyMate logo with a link that takes the user back to the homepage. It also includes a link to the registration form for users who have not yet registered for an account. 
+
+I use django-allauth to provide all the configuration for user authentication and it includes the following fields:
+
+    - Username
+    - Password
+
+The user has the option to select in case they want their login to be remembered.
+
+The login page has a consistent style with the rest of the website. The form is submitted via the login button at the bottom of the form. When users click the login button they are directed to the dashboard.
+
+<details>
+<summary>Screenshot of Login</summary>
+
+        Sign in
+![Sign in](https://user-images.githubusercontent.com/94321555/235278044-0d65612a-8370-451a-a7ff-c9f82123ce5b.png)
+
+</details>
+
+
+### Sign up
+
+The website allows the user to register for an account. The registration form can be accessed via the "Register" button on the navigation bar of the introductory web page. The registration page has the MoneyMate logo with a link that returns the user to the home page. It also includes a link to the login page for users who already have an account.
+
+I use django-allauth to provide all the configurations for user authentication and include the fields below.
+
+    - Username
+    - E-mail(optional)
+    - Password
+    - Password (again)
+
+The styles of the registration page are consistent with the rest of the website. The form is submitted via the Register button at the bottom of the form. When users click the Register button they are directed to the dashboard.
+
+<details>
+<summary>Screenshot of Sign up</summary>
+
+        Sign up
+![Sign up](https://user-images.githubusercontent.com/94321555/235278592-5581b343-3103-4d21-a89b-f1c7bd92918a.png)
+
+</details>
+
+
+### Sign out
+
+* The dashboard has functions for a logged-in user to log out.
+* The logout form can only be accessed from the dashboard and only when the user is logged in.
+* Confirm with the logged-in user that they wish to log out.
+* Its style is consistent with the rest of the website and is fully responsive.
+* The Log Out button logs the user out and returns them to the home page. 
+* There is a button to return to the dashboard menu.
+
+<details>
+<summary>Screenshot of Sign out</summary>
+
+        Sign out
+![Sign out](https://user-images.githubusercontent.com/94321555/235278793-aba10f26-1944-46e2-b5e1-fbbef16e5e46.png)
+
+</details>
+
+
+### Admin Panel
+
+The website provides the business owner with the functionality to view and interact with the database in the Django admin panel.
+* The dashboard can be accessed by typing `/admin/` at the end of the website URL in the URL bar.
+* This takes the user to the Django admin login page, where they are prompted for their username and password.  Only users with Superuser and staff status have permissions to log in. 
+* The Superuser has permissions to add, change, delete and view everything, while the user with staff status only has certain permissions granted by the Superuser. 
+* The registered project templates can be viewed in the administration interface.
+* The Superuser can find the registered users under: AUTHENTICATION AND AUTHORIZATION > Users. Using the menu on the right, the superuser can filter this table by:
+
+    - staff status
+    - superuser status
+    - active
+
+* The Superuser can find the registered categories in: MONEYMATE > Categories. Using the menu on the right, the superuser can filter this table by:
+
+    - user
+    - name
+  
+* The Superuser can find the registered expenses in: MONEYMATE > Expenses. Using the menu on the right, the superuser can filter this table by:
+
+    - user
+    - category
+    
+* The Superuser can find the registered incomes in: MONEYMATE > Incomes. Using the menu on the right, the superuser can filter this table by:
+
+    - user
+    - origin
+    
+* The Superuser can find the registered origins in: MONEYMATE > Origins. Using the menu on the right, the superuser can filter this table by:
+
+    - user
+    - name
+
+<details>
+<summary>Screenshot of Django Administration</summary>
+
+        Login
+![Login](https://user-images.githubusercontent.com/94321555/235279728-2c2c6759-bc57-4e35-aab2-da6a3493e39e.png)
+
+        Users
+![Users](https://user-images.githubusercontent.com/94321555/235279806-f89c7a96-4197-4ead-bc42-e226ce73bbfa.png)
+
+        Categories
+![Categories](https://user-images.githubusercontent.com/94321555/235279841-4c730921-3994-4eb9-9aa4-b31647972c09.png)
+
+        Expenses
+![Expenses](https://user-images.githubusercontent.com/94321555/235279887-18daa827-7b37-466b-8593-c00e4a7dc642.png)
+
+        Incomes
+![Incomes](https://user-images.githubusercontent.com/94321555/235279931-5897e7d3-8956-49df-b295-b65aa8693d0a.png)
+
+        Origins
+![Origins](https://user-images.githubusercontent.com/94321555/235279959-46f34be7-10f1-42b6-acf5-dcfbc6e5745b.png)
+
+</details>
+
 
