@@ -20,12 +20,9 @@ _________
     * [Wireframes](#Wireframes)
     * [Flowchart](#Flowchart)
     * [Database Schema](#Database-Schema)
-* [Flowchart](#Flowchart)
-* [Colour Scheme](#Colour-Scheme)
-* [Database structure](###Database-structure)
 * [Features](#Features)
-  * [Menu](#Menu)
-  * [Option 1](#Option-1)
+  * [Favicon](#Favicon)
+  * [Introduction page](#Introduction-page)
   * [Option 2](#Option-2)
   * [Features Left to Implement](#Features-Left-to-Implement)
 * [Technologies Used](#Technologies-Used)
@@ -225,5 +222,132 @@ The current Database Schema used for this project, four custom models have been 
     - symbol
     
   [Back To Top](#table-of-contents)
+  
+  ## Features
+  
+  ### Favicon
+  
+Our favicon works to visually identify the webpage and help the user recognize it more easily when they have multiple tabs open in the browser. Additionally, it improves the image and branding of a webpage.
 
+<details>
+<summary>MoneyMate Favicon</summary>
+
+        Favicon
+![Favicon](https://user-images.githubusercontent.com/94321555/235268897-f527c2f9-d8a7-4cf7-a69f-2a4fc548b535.png)
+
+</details>
+  
+### Introduction page
+
+The navigation bar of our website is composed of a logo that serves as a link to the homepage. Below it are sections that provide information on how the website works, user reviews, and contact details. On the right side, there are two buttons, one for logging in and the other for registering in case the user doesn't have an account. Lastly, the footer provides quick access to the project's social media pages.
+  
+  <details>
+<summary>Screenshots of the introduction website</summary>
+
+        Navigation bar
+![Navigation bar](https://user-images.githubusercontent.com/94321555/235269809-3abe8040-c97c-47f2-838d-6504093592d9.png)
+
+        Call to action Part 1
+![Call to action Part 1](https://user-images.githubusercontent.com/94321555/235270144-0efaa993-a4d2-4322-b3f6-a31d5f3a3818.png)
+
+        Call to action Part 2
+![Call to action Part 2](https://user-images.githubusercontent.com/94321555/235270261-c91437e4-7fb3-4169-aa34-85f1dac32eb7.png)
+
+        How it works Section Part 1
+![How it works Section Part 1](https://user-images.githubusercontent.com/94321555/235270381-2e12e691-7196-41d7-8f94-8a24894aae7c.png)
+
+        How it works Section Part 2
+![How it works Section Part 2](https://user-images.githubusercontent.com/94321555/235270439-7e215449-c496-468d-829c-8dd1a83b1e45.png)
+
+        How it works Section Part 3
+![How it works Section Part 3](https://user-images.githubusercontent.com/94321555/235270537-dec7aaed-62b7-4282-9baf-829bcb378794.png)
+
+        Reviews Section
+![Reviews Section](https://user-images.githubusercontent.com/94321555/235270690-7761f215-c321-4568-b8de-12a951bd0933.png)
+
+        Contact Section
+![Contact Section](https://user-images.githubusercontent.com/94321555/235270819-185ebaae-3309-4d27-9a90-3c7991f1d3ff.png)
+
+        Footer
+![Footer](https://user-images.githubusercontent.com/94321555/235270914-db842c6d-a81d-413f-8adc-2fd875ecb8ef.png)
+
+        Copyright
+![Copyright](https://user-images.githubusercontent.com/94321555/235271036-5af640e6-33c7-416a-9c04-3eb1515bb195.png)
+
+</details>
+
+### Dashboard
+
+The dashboard is what the user will see when they log in or register as a new user. The user has a navigation bar at the top with the logo that links to the dashboard homepage. Then we have the option of "Menu" that also directs the user to the dashboard homepage, the "Expenses" option directs to the list of expense records that the user has added, the "Incomes" option directs the user to the list of income records that the user has added, the "Category" option directs the user to the list of categories used to categorize the expenses, and the "Origin" option directs the user to the list of origins used to categorize the incomes. Finally, on the right side, there is a button to log out. Below the navigation bar, there is a container that welcomes the user, but the text will change to indicate the user's current location based on the navigation bar options. On the right side, we have the "_" and "+" buttons for adding expenses or income. The buttons to add an expense or income will be available in the "Menu", "Expenses", and "Incomes" sections. Next, there is a container that reminds the user to register their own categories and origins, although there are pre-established categories and origins available when a new user registers. Finally, we have a container that is present in every section of the dashboard and displays the total sum of expenses, incomes, and balance.
+
+<details>
+<summary>Screenshots of the Dashboard/Menu</summary>
+
+        Navigation bar
+![Navigation bar](https://user-images.githubusercontent.com/94321555/235272777-8868a603-93f5-45fc-a5dd-e4e3c65949ee.png)
+
+        Welcome, add expense or income Section
+![Welcome, add expense or income Section](https://user-images.githubusercontent.com/94321555/235272856-7deb0b41-462f-4210-92eb-42e48e0302a9.png)
+
+        Information Section
+![Information Section](https://user-images.githubusercontent.com/94321555/235272885-1a80cc7d-9114-401a-b364-30cea82a6c33.png)
+
+        Results
+![Results](https://user-images.githubusercontent.com/94321555/235272937-061873d1-8fb1-4729-ad8c-2a27a8d3baa1.png)
+
+</details>
+
+
+<details>
+<summary>Screenshots of the Dashboard/Expenses</summary>
+
+        Without expenses
+![Without expenses](https://user-images.githubusercontent.com/94321555/235273123-4a37b3b8-9973-46df-a763-5384eed205db.png)
+
+        With expenses
+![With expenses](https://user-images.githubusercontent.com/94321555/235273212-8797a9ff-b9ab-41e7-acfa-88cbf8024b37.png)
+
+        Add expense
+![Add expense](https://user-images.githubusercontent.com/94321555/235273368-9847d0d9-ba5c-4dda-a1de-c2ac5c7c8afd.png)
+
+        Edit expense
+![Edit expense](https://user-images.githubusercontent.com/94321555/235273443-7e64d671-b3c6-4a21-b827-9acb91bcdc0a.png)
+
+</details>
+
+
+<details>
+<summary>Screenshots of the Dashboard/Incomes</summary>
+
+        Without incomes
+![Without incomes](https://user-images.githubusercontent.com/94321555/235273619-91b82690-1165-46f4-9686-1d24959313b2.png)
+
+        With incomes
+![With incomes](https://user-images.githubusercontent.com/94321555/235273721-224067b1-356c-4668-8462-6e6059d58ed4.png)
+
+        Add income
+![Add income](https://user-images.githubusercontent.com/94321555/235273753-3a16c033-5c1f-48f9-95f2-636ed3379c47.png)
+
+        Edit income
+![Edit income](https://user-images.githubusercontent.com/94321555/235273807-cf76c797-31ce-4a8b-a1d4-18f24e2790bb.png)
+
+</details>
+
+
+<details>
+<summary>Screenshots of the Dashboard/Category</summary>
+
+        Without categories
+![Without categories](https://user-images.githubusercontent.com/94321555/235273977-d06e3056-4f48-4346-b80d-d637406185e4.png)
+
+        With categories
+![With categories](https://user-images.githubusercontent.com/94321555/235273866-e1cfd712-f857-45ed-8c29-988a0b9ef43d.png)
+
+        Add category
+![Add category](https://user-images.githubusercontent.com/94321555/235273893-e8689e1e-8f27-4114-a70d-43bc2b30bd73.png)
+
+        Edit category
+![Edit category](https://user-images.githubusercontent.com/94321555/235273922-6e86932a-9e3e-4add-a75c-01a94148d922.png)
+
+</details>
 
