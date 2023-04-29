@@ -28,17 +28,17 @@ _________
   * [Sign up](#Sign-up)
   * [Sign out](#Sign-out)
   * [Admin Panel](#Admin-Panel)
-  
-  
-  
-  
+* [Future Features](#Future-Features)
 * [Technologies Used](#Technologies-Used)
   * [Languages](#Languages)
-  * [Software](#Software)
-  * [Imported Libraries and Packages](#Imported-Libraries-and-Packages)
+  * [Libraries & Frameworks](#Libraries-&-Frameworks)
+  * [Tools](#Tools) 
 * [Testing and Validation](#Testing-and-Validation)
 * [Bugs](#Bugs) 
 * [Unfixed Bugs](#Unfixed-Bugs)
+
+
+
 * [Deployment](#Deployment)
   * [Local Deployment](#Local-Deployment)
   * [Heroku Deployment](#Heroku Deployment)
@@ -230,6 +230,7 @@ The current Database Schema used for this project, four custom models have been 
     
   [Back To Top](#table-of-contents)
   
+______
   ## Features
   
   ### Favicon
@@ -494,5 +495,132 @@ The website provides the business owner with the functionality to view and inter
 ![Origins](https://user-images.githubusercontent.com/94321555/235279959-46f34be7-10f1-42b6-acf5-dcfbc6e5745b.png)
 
 </details>
+
+[Back To Top](#table-of-contents)
+_______
+
+## Future Features
+
+* I would like to add the option for users to register using Google or Facebook because it makes accessing the application faster. The registration process will be implemented using Django Allauth to integrate with the authentication APIs of these platforms.
+* Email or phone verification.
+* In the near future, I also plan to implement the remaining 4 user stories that were previously pending due to time constraints and my need to further study the Django framework:
+
+![Remain Issues](https://user-images.githubusercontent.com/94321555/235320187-1151392c-c940-450a-874d-c7df899fa11d.png)
+
+1. I intend to include a feature that allows users to select their preferred currency. Upon registration, users would have access to some default currency options, but they could also modify, delete, or add any currencies they prefer. While I have developed the code for this functionality, I am still struggling to achieve the desired outcome. Therefore, I have temporarily removed this feature.
+2. Forgot/Reset password functionality.
+3. I want the user to be able to download a PDF of all the expenses and incomes made, which should also include a graph showing the development of their wallet.
+4. I had intended to add a calendar that would display the current month and allow users to click on any day to add their expenses or income. However, this idea has been put on hold for the moment due to the difficulty in implementing it.
+
+[Back To Top](#table-of-contents)
+______
+
+## Technologies Used
+
+### Languages
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - Markup language.
+* [CSS3](https://en.wikipedia.org/wiki/CSS) - Style sheet language.
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Programming language.
+
+### Libraries & Frameworks
+
+* [Django 3.2.18](https://www.djangoproject.com/) - Free and open source Python Web Framework.
+* [Gunicorn 20.1.0](https://gunicorn.org/) - A Python WSGI HTTP server compatible with Django and used to run the project on Heroku.
+* [PostgreSQL 0.5.0](https://www.postgresql.org/) - A powerful, open-source object-relational database system.
+* [Pyscopg2 2.9.5](https://www.psycopg.org/docs/) - A PostgreSQL database adapter for Python.
+* [Cloudinary](https://cloudinary.com/) - A persistent file store for media.
+* [Heroku](https://www.heroku.com) - A cloud platform as a service.
+* [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL database hosting service.
+* [SQLite3](https://docs.python.org/3/library/sqlite3.html) - The database provided by Django.
+* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) - Integrated set of Django applications addressing authentication and registration.
+* [Bootstrap 5.3.0-alpha3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - A Framework for building responsive, mobile-fist sites.
+
+### Tools
+
+* [GitPod](https://www.gitpod.io/) - Cloud development environment used.
+* [GitHub](https://github.com/) - Cloud based git repository used.
+* [W3C Validator](https://validator.w3.org/) - A validator which checks the markup validity of Web documents in HTML, XHTML, SMIL, MathML, etc.
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - A validator which checks the validity of CSS code.
+* [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Highlights syntactical and stylistic problems in Python source code.
+* [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools. 
+* [Am I responsive](https://ui.dev/amiresponsive?url=https://moneymate.herokuapp.com/) - For responsive visuals of the website.
+* [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size.
+* [Pexels](https://www.pexels.com/) - Stock Photos.
+* [Canva](https://www.canva.com/colors/color-palette-generator/) - Design the project logo.
+* [Google Fonts](https://fonts.google.com/) - Fonts.
+* [Font Awesome](https://fontawesome.com/) - Icons.
+* [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes.
+* [LucidChart](https://www.lucidchart.com/) - Entity Relationship Diagram.
+* [BrowserStack](https://www.browserstack.com/) - App and Browser Testing.
+* [Colors](https://coolors.co/) - Search for colours for the website.
+* [Favicon](https://favicon.io/) - Make Favicon.
+
+[Back To Top](#table-of-contents)
+_______
+
+## Testing and Validation
+
+All testing information can be found in [TESTING.md](TESTING.md).
+
+[Back To Top](#table-of-contents)
+_______
+
+### Bugs
+**1**
+<details>
+<summary>I can't associate categories with the registered user:</summary>
+
+Problem: The categories section was not linked to the registered user. Also, any changes such as editing, deleting, and adding categories were applied to all registered and new users. This issue needs to be fixed so that changes made by one user do not affect others.
+
+Solution: The solution was to add the User field to the Category model
+
+![Category Model](https://user-images.githubusercontent.com/94321555/235321961-b79bcc99-4572-4de2-9c04-3acabd92e705.png)
+
+</details>
+
+**2**
+<details>
+<summary>The total expenses, incomes, and balance are not displayed:</summary>
+
+Problem: Previously, the total expenses, incomes, and balance were only displayed in the HTML file associated with the URLs and view
+
+Solution: Add the following code to all functions in the views.py file because I wanted the user to be able to see the total expenses, incomes, and balance at all times in the project:
+
+![Solution](https://user-images.githubusercontent.com/94321555/235322315-abcbf821-49c2-4bc0-b0f9-54cbe63d51f1.png)
+
+</details>
+
+**3**
+<details>
+<summary>Error when entering decimals:</summary>
+
+Problem: If the user enters a number with decimals and uses a comma instead of a dot, an error message will be displayed:
+
+![Error](https://user-images.githubusercontent.com/94321555/235322742-d438422d-7696-4f6b-ab9f-c94d01d0527d.png)
+
+Solution: To solve this issue, we need to add the following code to the 'Add expense' form:
+
+![Solution](https://user-images.githubusercontent.com/94321555/235322865-df67e82b-8ee8-4601-a713-ed4e0de4d4ca.png)
+
+</details>
+
+**4**
+<details>
+<summary>The "Category" and "Origin" models are missing the "user" field:</summary>
+
+Problem: I added the "user" field to the "Category" and "Origin" models. After making the migrations, I encountered an error because the user with ID=1 could not be identified. This is what was displayed on the screen
+
+![Error](https://user-images.githubusercontent.com/94321555/235323094-d4b0fba5-abb9-4e8b-bb87-67818804e811.png)
+
+Solution: What I did was to delete the "Category" and "Origin" models, make the migrations, and then add the models back, but this time with the "user" field. After making the migrations, there were no more errors related to user identification.
+
+</details>
+
+[Back To Top](#table-of-contents)
+_______
+## Unfixed Bugs
+
+
 
 
