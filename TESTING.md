@@ -253,7 +253,7 @@ The following are the results for all pages:
 
 | Page | Device | Performance | Accessibility | Best Practice | SEO |
 | ---- | ------ | ----------- | ------------- | ------------- | --- |
-| Homepage | mobile  |  95 | 95 | 83 |  97 |
+| Homepage | mobile  |  95 | 95 | 83 |  100 |
 |                               | desktop | 92 | 95 | 83 | 100 |
 | Login | mobile  |  92 | 100 | 92 |  100 |
 |                          | desktop | 88 | 100 | 92 | 100 |
@@ -293,6 +293,95 @@ The following are the results for all pages:
 [Back To Top](#table-of-contents)
 
 _____
+
+## Responsiveness Testing
+
+The website is responsive for screens with a mininum width of 320px and a maximum width of 2560px. Friends and family tested the website on their devices and all reported no issues with responsiveness.  Further manual tests were done using Chrome's DevTools.
+
+<details>
+
+<summary>Screenshots of website at different screen sizes.</summary>
+
+**Homepage**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235331847-a67d50ff-7da7-4951-ac4c-1733d0233275.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235331890-472bf0b9-7c4b-4d47-b005-b9c8ecfeae92.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235331976-970cf6f5-c050-4ec8-bdcd-b48ea4f7f597.png)
+
+**Login**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332017-2f5f6296-b9c4-4094-9dcd-a49e3ef67a5f.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332040-36e1dcb3-4c94-4fde-8332-a5c668f6fd1f.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332052-acc03733-8e89-4375-b0fa-0df57aa996a2.png)
+
+**Sign up**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332101-944e8939-0334-46f8-8c64-1aa455d05efc.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332118-2a5d473c-afab-4566-a306-60b690f30cd5.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332128-efd95110-5fe1-4541-8c41-6d8bfe2e5970.png)
+
+**Sign out**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332145-38f1a307-67d7-4143-b97a-2e99b09cbcf9.png)
+
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332156-035acb67-7b49-4b51-ba85-baedb5b84425.png)
+
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332165-93d4c64e-af51-4492-9e20-e265b74852fa.png)
+
+**Dashboard/Menu**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332199-759122c4-d676-4374-b1b7-ba0130c38c54.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332220-61da860f-0a64-46f1-9a62-9e0faef7d517.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332232-53510f65-3e28-4ef7-aec6-2433bd93290d.png)
+
+**Dashboard/Expenses-Incomes**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332280-142978ec-33ff-4a33-a281-08efafb17438.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332294-2c025cec-6aca-4bae-9839-6c3bfa4f710e.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332301-62be7ffc-83ad-44d1-af65-6bb6237879a8.png)
+
+**Dashboard/Category-Origin**
+
+        Mobile 320px
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332336-e5fe5fe8-2baa-4b24-91b1-b5a8bdb01226.png)
+
+        Tablet 768px
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332346-8fb93603-4db8-41d7-ba58-c1d0b0857582.png)
+
+        Desktop 1200px
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332358-83a6055b-8674-4720-afac-063fe1d1ed28.png)
+
+</details>
 
 
 [Back To Top](#table-of-contents)
