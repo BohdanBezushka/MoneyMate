@@ -186,7 +186,28 @@ Below you can see the wireframes for the project. I decided to add corresponding
 
 #### Flowchart
 
-I created this flowchart prior to writing my code to have a clear understanding of the necessary implementation while programming. It effectively outlines the program's layout and structure, including where user input is required, where input validation occurs, and how to handle invalid input. The flowchart was created usingg [Miro](https://miro.com/). Next, you can go directly to Miro and view the diagram. I haven't included a screenshot because the free version doesn't allow downloading high-resolution files: [MoneyMate Flowchart](https://miro.com/app/live-embed/uXjVMOsZVtI=/?moveToViewport=-4505,-2258,8056,3786&embedId=182857515834)
+I created this flowchart prior to writing my code to have a clear understanding of the necessary implementation while programming. It effectively outlines the program's layout and structure, including where user input is required, where input validation occurs, and how to handle invalid input. The flowchart was created usingg [Miro](https://miro.com/). Next, I will provide you with screenshots of the flowchart divided into parts. This is because the free version of Miro does not allow downloading images with good definition:
+
+<details>
+<summary>MoneyMate Flowchart</summary>
+
+        Part 1
+![Part 1](https://user-images.githubusercontent.com/94321555/235332789-f20fd01c-d38a-4015-b069-a854545d7a2f.png)
+
+
+        Part 2
+![Part 2](https://user-images.githubusercontent.com/94321555/235332794-6f3a768d-d26b-481a-b925-c9d625220aad.png)
+
+
+        Part 3
+![Part 3](https://user-images.githubusercontent.com/94321555/235332800-fac235ee-5ebf-4ba2-a34b-d1e93fc92d8d.png)
+
+
+        Part 4
+![Part 4](https://user-images.githubusercontent.com/94321555/235332806-191892c6-c0fc-48fc-9571-f87fba8f6216.png)
+ 
+</details>
+
 
 #### Database Schema
 I had trouble creating the database in this part because I wasn't sure what I would need for the project. In the following lines, a screenshot of the previous database schema will be shown, and then the current database will be displayed.
@@ -548,6 +569,7 @@ ______
 * [TinyPNG](https://tinypng.com/) - Compresses images to reduce the file size.
 * [Pexels](https://www.pexels.com/) - Stock Photos.
 * [Canva](https://www.canva.com/colors/color-palette-generator/) - Design the project logo.
+* [Miro](https://miro.com/app/dashboard/)- Make Flowchart.
 * [Google Fonts](https://fonts.google.com/) - Fonts.
 * [Font Awesome](https://fontawesome.com/) - Icons.
 * [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes.
@@ -555,6 +577,7 @@ ______
 * [BrowserStack](https://www.browserstack.com/) - App and Browser Testing.
 * [Colors](https://coolors.co/) - Search for colours for the website.
 * [Favicon](https://favicon.io/) - Make Favicon.
+* [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl) - Full Page Screen Capture
 
 [Back To Top](#table-of-contents)
 _______
