@@ -1,14 +1,14 @@
 
 # Table of Contents
 
-* [Code Validation](#code-validation)
+* [Code Validation](#Code-Validation)
   * [HTML](#HTML)
   * [CSS](#CSS)
   * [Python](#Python)
-* [Lighthouse](#lighthouse-testing)
+* [Lighthouse Testing](#Lighthouse-Testing)
 * [Responsiveness Testing](#Responsiveness-Testing)
-* [Browser Compatibility](#browser-compatibilty-testing)
-* [User Stories](#user-story-testing)
+* [Browser Compatibilty Testing](#Browser-Compatibilty-Testing)
+* [User Story Testing](#User-Story-Testing)
 * [Features](#features-testing)
 
 _____
@@ -382,6 +382,29 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 ![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332358-83a6055b-8674-4720-afac-063fe1d1ed28.png)
 
 </details>
+[Back To Top](#table-of-contents)
+
+_____
+
+## Browser Compatibilty Testing
+
+Website was tested on current Chrome, Firefox and Microsoft Edge for compatibility.
+
+<details>
+
+<summary>Table of the results:</summary>
+
+| Intended      | Chrome | Firefox | Edge | Brave |
+| ------------- | ------ | ------- | ---- | ----- |
+| Appearance    | Good   | Good    | Good | Good  |
+| Responsiveness| Good   | Good    | Good | Good  | 
+
+</details>
+
+[Back To Top](#table-of-contents)
+
+_____
+
 
 
 [Back To Top](#table-of-contents)
