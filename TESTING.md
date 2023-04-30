@@ -1,5 +1,6 @@
+# MoneyMate Testing 🔍✅
 
-# Table of Contents
+## Table of Contents
 
 * [Code Validation](#Code-Validation)
   * [HTML](#HTML)
@@ -496,11 +497,17 @@ As a user, I have the capability to categorize my incomes, so that I can receive
 | The user can choose, create, delete or modify origins for incomes| Achieved | |
  
 </details>
+
 [Back To Top](#table-of-contents)
 
 _____
 
 ## Features Testing
+
+Each feature listed in the [README.md](README.md) has been manually tested on the browsers listed in [Browser Compatibility Testing](#Browser-Compatibility-Testing) and the results are listed in the tables below:
+
+
+
 
 [Back To Top](#table-of-contents)
 
