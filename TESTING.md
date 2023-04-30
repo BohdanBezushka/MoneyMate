@@ -9,7 +9,7 @@
 * [Responsiveness Testing](#Responsiveness-Testing)
 * [Browser Compatibilty Testing](#Browser-Compatibilty-Testing)
 * [User Story Testing](#User-Story-Testing)
-* [Features](#features-testing)
+* [Features Testing](#Features-Testing)
 
 _____
 
@@ -394,10 +394,10 @@ Website was tested on current Chrome, Firefox and Microsoft Edge for compatibili
 
 <summary>Table of the results:</summary>
 
-| Intended      | Chrome | Firefox | Edge | Brave |
-| ------------- | ------ | ------- | ---- | ----- |
-| Appearance    | Good   | Good    | Good | Good  |
-| Responsiveness| Good   | Good    | Good | Good  | 
+| Intended      | Chrome | Firefox | Edge |
+| ------------- | ------ | ------- | ---- |
+| Appearance    | Good   | Good    | Good |
+| Responsiveness| Good   | Good    | Good | 
 
 </details>
 
@@ -405,7 +405,102 @@ Website was tested on current Chrome, Firefox and Microsoft Edge for compatibili
 
 _____
 
+## User Story Testing
+Each [User Story](https://github.com/BohdanBezushka/MoneyMate/issues?q=is%3Aissue+is%3Aclosed) has been manually tested and the results have been collected in the tables below.
 
+<details>
+
+<summary>User Story:</summary>
+
+* USER STORY:Informative Homepage for Users [#1](https://github.com/BohdanBezushka/MoneyMate/issues/1)
+
+As a user, I can view a homepage to understand the purpose of the application, so that I can benefit from it efficiently.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The website provides a description of the application | Achieved | |
+| The homepage indicates the steps to use the application | Achieved | |
+| On the website, there are user reviews of people who have used the application | Achieved | |
+
+* USER STORY: Efficient App Navigation [#2](https://github.com/BohdanBezushka/MoneyMate/issues/2)
+
+As a user, I can navigate the app easily and intuitively so that I can access information efficiently.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| Access to the website is efficient | Achieved | |
+| The tab displays the correct name of the app | Achieved | |
+| A favicon appears before the page title in the tab | Achieved | |
+
+* USER STORY: Login & Log out [#3](https://github.com/BohdanBezushka/MoneyMate/issues/3)
+
+As a user, I can create an account so that I can use the application.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The user can create an account with a username, email, and password | Achieved | |
+| The user can log out. | Achieved | |
+
+* USER STORY: Admin dashboard [#4](https://github.com/BohdanBezushka/MoneyMate/issues/4)
+
+As an ADMIN, I can access a dashboard to view the number of registered users so that I can keep track of user growth.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The administrator can view the number of registered users| Achieved | |
+| The admin can view the expense and income records of each user | Achieved | | 
+ 
+* USER STORY: Add expense or income [#6](https://github.com/BohdanBezushka/MoneyMate/issues/6)
+
+As a user, I can add an expense or income so that I have a record.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The user can correctly register an expense or income in the application| Achieved | |
+| The user can see the records of expenses and incomes that he/she has just made. | Achieved | | 
+| The user can modify any expense or income| Achieved | |
+| The user can delete any expense or income | Achieved | |
+ 
+* USER STORY: User Financial Balance Visualization [#7](https://github.com/BohdanBezushka/MoneyMate/issues/7)
+
+As a user, I can have the capability to view my total expenses and income, so that I can receive the benefit of seeing my financial balance at a glance
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The user can see the total expenses| Achieved | |
+| The user can see the total income| Achieved | |
+| The user can see the balance | Achieved | |
+ 
+* USER STORY: Categories for expenses [#8](https://github.com/BohdanBezushka/MoneyMate/issues/8)
+
+As a user, I have the capability to categorize my expenses and income, so that I can receive the benefit of understanding my spending habits and identifying areas for improvement.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The user can choose, create, delete or modify categories for expenses and income.| Achieved | |
+
+ * USER STORY: Responsive design [#14](https://github.com/BohdanBezushka/MoneyMate/issues/14)
+
+As a user, I can use the application on any device so that I can access it from anywhere.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The application functions properly on any device| Achieved | |
+
+ * USER STORY: Origins for incomes [#19](https://github.com/BohdanBezushka/MoneyMate/issues/19)
+
+As a user, I have the capability to categorize my incomes, so that I can receive the benefit of understanding my spending habits and identifying areas for improvement.
+
+| Acceptance Criteria  | Test     | Comments |
+|:--------------------:|:--------:| -------- |
+| The user can choose, create, delete or modify origins for incomes| Achieved | |
+ 
+</details>
+[Back To Top](#table-of-contents)
+
+_____
+
+## Features Testing
 
 [Back To Top](#table-of-contents)
 
