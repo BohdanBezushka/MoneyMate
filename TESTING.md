@@ -383,6 +383,7 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 ![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332358-83a6055b-8674-4720-afac-063fe1d1ed28.png)
 
 </details>
+
 [Back To Top](#table-of-contents)
 
 _____
@@ -407,6 +408,7 @@ Website was tested on current Chrome, Firefox and Microsoft Edge for compatibili
 _____
 
 ## User Story Testing
+
 Each [User Story](https://github.com/BohdanBezushka/MoneyMate/issues?q=is%3Aissue+is%3Aclosed) has been manually tested and the results have been collected in the tables below.
 
 <details>
@@ -506,8 +508,249 @@ _____
 
 Each feature listed in the [README.md](README.md) has been manually tested on the browsers listed in [Browser Compatibility Testing](#Browser-Compatibility-Testing) and the results are listed in the tables below:
 
+<details>
+
+<summary>Homepage</summary>
+
+* Unregistered / Not logged in User > Navbar
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Favicon                       | display       | it works              |
+|                               | image quality | good                  |
+| Logo                          | hover over    | pointer shows         |
+|                               | click / tap   | directs to Homepage   |
+| Hamburger button on mobile    | hover over    | gets border           |
+|                               | click / tap   | toggles menu          |
+| How it works, Reviews & Contact  | hover over    |underline |
+|                               | click / tap   | directs to correct section|
+| Login, Sign up                | hover over    | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs to Login, Sign up |
 
 
+* Unregistered / Not logged in User > How it works section
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| buttons        | hover over   | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs to Sign up |
+ 
+* Unregistered / Not logged in User > Reviews Section
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| next button                   | click / tap   | next review |
+
+* Unregistered / Not logged in User > Footer
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Logo                          | click / tap   | directs to Homepage   |
+| Icons                         | hover over    | change color           |
+|                               | click / tap   | directs to social media, new tab  |
+
+ALL TESTS PASS
+
+</details>
+
+<details>
+
+<summary>Login</summary>
+
+* Unregistered / Not logged in User 
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Logo                          | click / tap   | returns to Homepage   |
+| Link sign up                  | hover over    | change color |
+|                               | click / tap   | directs to Sign up |
+| Remember me button            | click / tap   | a blue check mark appears, works |
+| Sign in Button                | hover over    |change background-colour, display border, font colour changed |
+|                               | click / tap   | directs to dashboard|
+
+ALL TESTS PASS
+
+</details>
+
+<details>
+
+<summary>Sign up</summary>
+
+* Unregistered / Not logged in User 
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Logo                          | click / tap   | returns to Homepage   |
+| Link sign in                  | hover over    | change color |
+|                               | click / tap   | directs to Sign in |
+| Sign up Button                | hover over    | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs dashboard |
+
+ALL TESTS PASS
+
+</details>
+
+<details>
+
+<summary>Sign out</summary>
+
+* Registered User 
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Logo                          | click / tap   | returns to dashboard   |
+| Sign Out Button               | hover over    | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs to Homepage   |
+| Back Button                   | hover over    | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs dashboard |
+
+ALL TESTS PASS
+
+</details>
+
+<details>
+
+<summary>Dashboard</summary>
+
+* Registered User > Dashboard > Navbar
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| Logo                          | click / tap   | directs to Dashboard Menu |
+| Hamburger button on mobile    | hover over    | gets border           |
+|                               | click / tap   | toggles menu          |
+| Menu, Expenses, Incomes, Category and Origin Links  | hover over    |underline and change color |
+|                               | click / tap   | directs to correct section|
+| Sign out                      | hover over    | change background-colour, display border, font colour changed |
+|                               | click / tap   | directs to sign out page |
+ 
+* Registered User > Dashboard > Menu
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| "-" and "+" buttons           | hover over    | gets border color  |
+|                               | click / tap   | directs to Add expense and add income  |
+| total expenses, incomes and balance buttons  | display    | correct results  |
+ 
+* Registered User > Dashboard > Expenses
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| edit button                   | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Edit expense  |
+| delete button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | removes recorded expense |
+| next button                   | click / tap   | shows the next page |
+
+* Registered User > Dashboard > Incomes
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| edit button                   | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Edit income  |
+| delete button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | removes recorded income |
+| next button                   | click / tap   | shows the next page |
+
+ * Registered User > Dashboard > Category
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| add category button           | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Add category  |
+| edit button                   | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Edit category  |
+| delete button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | removes recorded category |
+| next button                   | click / tap   | shows the next page |
+
+ * Registered User > Dashboard > Origin
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| add Origin button             | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Add origin  |
+| edit button                   | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to Edit origin  |
+| delete button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | removes recorded origin |
+| next button                   | click / tap   | shows the next page |
+ 
+ * Registered User > Dashboard > Add expense
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| amount and description data   | input         | correct |
+| category data                 | display       | shows all registered categories |
+| date data                     | display       | shows the days of the current month |
+| submit button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list Expenses, saves the register |
+ 
+  * Registered User > Dashboard > Add income
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| amount and description data   | input         | correct |
+| origin data                   | display       | shows all registered origins |
+| date data                     | display       | shows the days of the current month |
+| submit button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list Incomes, saves the register |
+ 
+   * Registered User > Dashboard > Add category
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| name of category data         | input         | correct |
+| submit button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list categories, saves the change |
+
+    * Registered User > Dashboard > Add origin
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| name of origin data           | input         | correct |
+| submit button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list origins, saves the change |
+ 
+ * Registered User > Dashboard > Edit expense
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| amount and description data   | input         | correct |
+| category data                 | display       | shows all registered categories |
+| date data                     | display       | shows the days of the current month |
+| update button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list Expenses, saves the register |
+ 
+  * Registered User > Dashboard > Edit income
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| amount and description data   | input         | correct |
+| origins data                  | display       | shows all registered origins |
+| date data                     | display       | shows the days of the current month |
+| update button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list Incomes, saves the register |
+ 
+   * Registered User > Dashboard > Edit category
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| name of category data         | input         | correct |
+| update button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list categories, saves the change |
+
+    * Registered User > Dashboard > Edit origin
+
+| Feature                       | Action        | Effect                |
+| ----------------------------- | ------------- | --------------------- |
+| name of origin data           | input         | correct |
+| update button                 | hover over    | change background-colour, display border, font colour changed  |
+|                               | click / tap   | directs to list origins, saves the change | 
+
+ALL TESTS PASS
+
+</details>
 
 [Back To Top](#table-of-contents)
 
