@@ -839,7 +839,7 @@ _____
 
 Forking allows you to view and edit the code without affecting the original repository
 
-1. Locate the GitHub repository. Link to this repository can be found [here](https://github.com/MoniPar/tailors_thimble).
+1. Locate the GitHub repository. Link to this repository can be found [here](https://github.com/BohdanBezushka/MoneyMate).
 2. Click on 'Fork', in the top right-hand corner.
 3. This will take you to your own repository to a fork with the same name as the original branch.
 
@@ -852,7 +852,7 @@ _____
 <details>
 <summary>Steps to Creating a Local Clone</summary>
 
-1. Go to the GitHub repository. Link to this repository can be found [here](https://github.com/MoniPar/tailors_thimble).
+1. Go to the GitHub repository. Link to this repository can be found [here](https://github.com/BohdanBezushka/MoneyMate).
 2. Click on 'Code' to the right of the screen. This will open a dropdown. Click on HTTPs and copy the link.
 3. Open Git Bash in your IDE and change the current working directory to the location where you want the cloned directory.
 4. Type `git clone`, paste the URL you copied earlier, and press Enter to create your local clone.
