@@ -203,6 +203,10 @@ footer{
     margin-right: 20px;
 }
 
+.iconons-social-media a:hover {
+    color:#FFD700 ;
+}
+
 /*          templates/account/signup.html          */
 
 #signup-section {
