@@ -6,7 +6,7 @@
   * [CSS](#CSS)
   * [Python](#Python)
 * [Lighthouse](#lighthouse-testing)
-* [Responsiveness](#responsiveness-testing)
+* [Responsiveness Testing](#Responsiveness-Testing)
 * [Browser Compatibility](#browser-compatibilty-testing)
 * [User Stories](#user-story-testing)
 * [Features](#features-testing)
