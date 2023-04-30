@@ -253,40 +253,40 @@ The following are the results for all pages:
 
 | Page | Device | Performance | Accessibility | Best Practice | SEO |
 | ---- | ------ | ----------- | ------------- | ------------- | --- |
-| Homepage | mobile  |  96 | 100 | 100 |  97 |
-|                               | desktop | 100 | 100 | 100 | 100 |
-| Login | mobile  |  94 | 100 | 100 |  96 |
-|                          | desktop | 100 | 100 | 100 | 100 |
-| Sign up             | mobile  |  95 | 100 | 100 |  97 |
-|                          | desktop | 100 | 100 | 100 | 100 |
-| Sign out     | mobile  |  94 | 100 |  92 |  98 |
+| Homepage | mobile  |  95 | 95 | 83 |  97 |
+|                               | desktop | 92 | 95 | 83 | 100 |
+| Login | mobile  |  92 | 100 | 92 |  100 |
+|                          | desktop | 88 | 100 | 92 | 100 |
+| Sign up             | mobile  |  95 | 100 | 92 |  100 |
+|                          | desktop | 100 | 100 | 92 | 100 |
+| Sign out     | mobile  |  85 | 100 |  92 |  100 |
 |                          | desktop | 100 | 100 |  92 | 100 |
-| Dashboard/Menu        | mobile  |  98 | 100 | 100 |  97 |
+| Dashboard/Menu        | mobile  |  90 | 87 | 92 |  100 |
+|                          | desktop |  99 | 97 | 92 | 100 |
+| Dashboard/Expenses      | mobile  |  95 | 82 | 92 |  100 |
+|                          | desktop | 95 | 82 | 92 | 100 |
+| Dashboard/Edit Expense       | mobile  |  95 | 85 | 92 |  100 |
+|                          | desktop |  100 | 84 | 92 | 100 |
+| Dashboard/Add Expense       | mobile  |  95 | 85 | 92 |  100 |
+|                          | desktop |  99 | 85 | 92 | 100 |
+| Dashboard/Incomes       | mobile  |  95 | 82 | 92 |  100 |
+|                          | desktop |  100 | 82 | 92 | 100 |
+| Dashboard/Edit Income       | mobile  |  95 | 85 | 92 |  100 |
+|                          | desktop |  99 | 85 | 92 | 100 |
+| Dashboard/Add Income       | mobile  |  95 | 85 | 92 |  100 |
+|                          | desktop |  99 | 85 | 92 | 100 |
+| Dashboard/Category      | mobile  |  95 | 95 | 92 |  100 |
+|                          | desktop |  99 | 95 | 92 | 100 |
+| Dashboard/Edit Category      | mobile  |  95 | 98 | 92 |  100 |
+|                          | desktop |  98 | 98 | 92 | 100 |
+| Dashboard/Add Category       | mobile  |  95 | 98 | 92 |  100 |
+|                          | desktop |  100 | 98 | 92 | 100 |
+| Dashboard/Origin     | mobile  |  93 | 98 | 92 |  100 |
+|                          | desktop |  99 | 98 | 92 | 100 |
+| Dashboard/Edit Origin      | mobile  |  94 | 98 | 92 |  100 |
 |                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Expenses      | mobile  |  98 | 100 | 100 |  98 |
-|                          | desktop | 100 | 100 | 100 | 100 |
-| Dashboard/Edit Expense       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Add Expense       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Incomes       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Edit Income       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Add Income       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Category      | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Edit Category      | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Add Category       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Origin     | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Edit Origin      | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
-| Dashboard/Add Origin       | mobile  |  98 | 100 | 100 |  97 |
-|                          | desktop |  99 | 100 | 100 | 100 |
+| Dashboard/Add Origin       | mobile  |  95 | 98 | 92 |  100 |
+|                          | desktop |  98 | 98 | 92 | 100 |
 
 </details>
 
