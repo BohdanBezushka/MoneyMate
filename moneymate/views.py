@@ -112,26 +112,11 @@ def addExpense(request):
 
     if request.method == 'POST':
         amount = request.POST['amount']
-
-        if not amount:
-            messages.error(request, 'Amount is required.')
-            return render(
-                request,
-                'moneymate/expenses/add_expense.html',
-                context
-                )
         description = request.POST['description']
         date = request.POST['date']
         category = request.POST['category']
-
         if not description:
-            messages.error(request, 'Description is required.')
-            return render(
-                request,
-                'moneymate/expenses/add_expense.html',
-                context
-                )
-
+            description = 'No description provided.'
         Expense.objects.create(
             user=request.user,
             amount=amount,
