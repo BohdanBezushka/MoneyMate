@@ -33,11 +33,15 @@
 			</div>
 			<div class="form-group">
 				<label for="origin">Origin:</label>
+				{% if origins %}
 				<select class="form-control" name="origin" id="origin" required>
 					{% for origin in origins %}
 					<option value="{{origin.name}}">{{origin.name}}</option>
 					{% endfor %}
 				</select>
+				{% else %}
+    			<p>You don't have any origins registered. Please <a href="{% url 'addOrigin' %}">add your origins</a> before adding incomes.</p>
+  				{% endif %}
 			</div>
 			<div class="form-group">
 				<label for="description">Description:</label>
