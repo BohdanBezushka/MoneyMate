@@ -162,25 +162,17 @@ def editExpense(request, id):
         return render(request, 'moneymate/expenses/edit_expense.html', context)
     if request.method == 'POST':
         amount = request.POST['amount']
-
-        if not amount:
-            messages.error(request, 'Amount is required.')
-            return render(
-                request,
-                'moneymate/expenses/edit_expense.html',
-                context
-                )
         description = request.POST['description']
         date = request.POST['date']
         category = request.POST['category']
-
-        if not description:
-            messages.error(request, 'Description is required.')
+        if not amount:
             return render(
                 request,
                 'moneymate/expenses/edit_expense.html',
                 context
                 )
+        if not description:
+            description = 'No description provided.'
 
         expense.user = request.user
         expense.amount = amount
