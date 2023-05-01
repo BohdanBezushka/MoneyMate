@@ -33,12 +33,16 @@
 			</div>
 			<div class="form-group">
 				<label for="category">Category:</label>
+				{% if categories %}
 				<select class="form-control" name="category" id="category" required>
 					<option selected value="{{values.category}}">{{values.category}}</option>
 					{% for category in categories %}
 					<option value="{{category.name}}">{{category.name}}</option>
 					{% endfor %}
 				</select>
+				{% else %}
+    			<p>You don't have any categories registered. Please <a href="{% url 'addCategory' %}">add your categories</a> before adding expenses.</p>
+  				{% endif %}
 			</div>
 			<div class="form-group">
 				<label for="description">Description:</label>
