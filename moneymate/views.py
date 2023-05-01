@@ -320,23 +320,17 @@ def editIncome(request, id):
         return render(request, 'moneymate/incomes/edit_income.html', context)
     if request.method == 'POST':
         amount = request.POST['amount']
-
+        description = request.POST['description']
+        date = request.POST['date']
+        origin = request.POST['origin']
         if not amount:
             return render(
                 request,
                 'moneymate/incomes/edit_income.html',
                 context
                 )
-        description = request.POST['description']
-        date = request.POST['date']
-        origin = request.POST['origin']
-
         if not description:
-            return render(
-                request,
-                'moneymate/incomes/edit_income.html',
-                context
-                )
+            description = 'No description provided.'
 
         income.user = request.user
         income.amount = amount
