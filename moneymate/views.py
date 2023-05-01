@@ -266,23 +266,17 @@ def addIncome(request):
 
     if request.method == 'POST':
         amount = request.POST['amount']
-
+        description = request.POST['description']
+        date = request.POST['date']
+        origin = request.POST['origin']
         if not amount:
             return render(
                 request,
                 'moneymate/incomes/add_income.html',
                 context
                 )
-        description = request.POST['description']
-        date = request.POST['date']
-        origin = request.POST['origin']
-
         if not description:
-            return render(
-                request,
-                'moneymate/incomes/add_income.html',
-                context)
-
+            description = 'No description provided.'
         Income.objects.create(
             user=request.user,
             amount=amount,
