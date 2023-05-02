@@ -439,11 +439,6 @@ a.nav-link{
     color: black;
 }
 
-/* Color of messages*/
-.red-message {
-    background-color: #DC143C;
-}
-
 /* Media queries */
 
 /* For large to medium screens sizes from 1240px wide and down */

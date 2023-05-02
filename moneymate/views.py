@@ -181,7 +181,7 @@ def editExpense(request, id):
         expense.description = description
 
         expense.save()
-        messages.success(request, 'Expense updated  successfully.')
+        messages.info(request, 'Expense updated  successfully.')
 
         return redirect('listExpenses')
 
@@ -191,12 +191,11 @@ def deleteExpense(request, id):
     # The user will be able to delete the chosen expense.
     expense = Expense.objects.get(pk=id)
     expense.delete()
-    messages.success(request, 'Expense deleted successfully.', extra_tags='red-message')  # noqa
+    messages.success(request, 'Expense deleted successfully.')
     return redirect('listExpenses')
 
 
 #                        INCOMES           ----------
-
 @login_required
 def viewIncomesList(request):
     # This feature allows the user to review the incomes
@@ -342,7 +341,7 @@ def editIncome(request, id):
 
         income.save()
 
-        messages.success(request, 'Income updated  successfully.')
+        messages.info(request, 'Income updated  successfully.')
         return redirect('listIncomes')
 
 
@@ -493,7 +492,7 @@ def editCategory(request, id):
         category.name = name
         category.save()
 
-        messages.success(request, 'Category updated  successfully.')
+        messages.info(request, 'Category updated  successfully.')
         return redirect('listCategories')
 
 
@@ -632,7 +631,7 @@ def editOrigin(request, id):
 
         origin.name = name
         origin.save()
-        messages.success(request, 'Origin updated  successfully.')
+        messages.info(request, 'Origin updated  successfully.')
         return redirect('listOrigins')
 
 
