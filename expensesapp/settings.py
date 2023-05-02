@@ -52,10 +52,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'moneymate',
 ]
 
 SITE_ID = 1
+
+# CRISPY_TEMPLATE_URL = 'bootstrap4'
 
 # ACCOUNT_EMAIL_REQUIRED = True
 
