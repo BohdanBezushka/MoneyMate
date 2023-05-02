@@ -809,7 +809,7 @@ def deleteCurrency(request, id):
     currency.delete()
     return redirect('listCurrencies')
 
-
+@login_required
 def chooseCurrency(request):
     # The user can choose their preferred currency.
     expensesAmount = Expense.objects.filter(user=request.user)
