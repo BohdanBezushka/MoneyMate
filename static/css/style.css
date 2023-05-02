@@ -415,7 +415,7 @@ a.nav-link{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-bottom: 10px;
-    background-color: #343a40;
+    background-color: yellow;
 }
 
 .alert.alert-info {
@@ -460,6 +460,14 @@ a.nav-link{
     }
 }
 
+/* Logo disappears when navbar-toggler is displayed */
+
+@media (max-width: 991.98px) {
+	img#page-start.img-nav {
+		display: none;
+	}
+}
+
 /* For medium to small screens sizes from 767px wide and down */
 
 @media screen and (max-width: 767px) {
@@ -475,3 +483,10 @@ a.nav-link{
     }
 }
 
+/* For small screens sizes from 600 px wide and down */
+@media (min-width: 600px) {
+    #result-footer .col-md {
+      flex: 0 0 80%;
+      max-width: 80%;
+    }
+  }
