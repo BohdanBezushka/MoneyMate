@@ -10,7 +10,7 @@
 			<a class="navbar-brand-img img-dashboard" href="{% url 'dashboard' %}"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate-Dark.png' %}" alt="Brand:MoneyMate" /></a>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item links-dashboard">
-					<a class="nav-link" href="{% url 'dashboard' %}">Menu</a>
+					<a class="nav-link" href="{% url 'dashboard' %}">Home</a>
 				</li>
 				<li class="nav-item links-dashboard">
 					<a class="nav-link" href="{% url 'listExpenses' %}">Expenses</a>
@@ -72,7 +72,7 @@
 			<div id="alert-info"  class="col-sm-12">
 				<div class="alert alert-info" role="alert">
 					<h4 class="alert-heading">Important Information:</h4>
-					<p>Welcome to MoneyMate. Before you start recording your expenses and income, you need to <u>add your categories for expenses and sources/origins for your incomes</u>.</p>
+					<p>Welcome to MoneyMate. Before you start recording your expenses and incomes, you need to <u>add your categories for expenses and sources/origins for your incomes</u>.</p>
 				</div>
 			</div>
 		</div>
@@ -83,18 +83,18 @@
 
 <footer id="result-footer" class="container bg-dark text-white text-center py-2">
 	<div class="row">
-		<div class="col-sm-12 col-md">
+		<div class="col-sm-12 col-md mb-3 mb-md-0">
 			<h5>Expenses:</h5>
 			<button id="total-expenses" type="button" class="btn-no btn-outline-light-no">{{ totalExpenses }}{{ currency_symbol }}</button>
-		</div>
-		<div class="col-sm-12 col-md">
+	  	</div>
+	  	<div class="col-sm-12 col-md mb-3 mb-md-0">
 			<h5>Incomes:</h5>
 			<button id="total-incomes" type="button" class="btn-no btn-outline-light-no">{{ totalIncomes }}{{ currency_symbol }}</button>
-		</div>
-		<div class="col-sm-12 col-md">
+	  	</div>
+	  	<div class="col-sm-12 col-md">
 			<h5>Balance:</h5>
 			<button id="balance-button" type="button" class="btn-no btn-outline-light-no">{{ balance }}{{ currency_symbol }}</button>
-		</div>
+	  	</div>
 	</div>
 </footer>
 

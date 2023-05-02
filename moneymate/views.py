@@ -222,6 +222,7 @@ def viewIncomesList(request):
     paginate = Paginator(incomes, 3)
     number_of_page = request.GET.get('page')
     page_object = paginate.get_page(number_of_page)
+
     context = {
         'incomes': incomes,
         'page_object': page_object,
