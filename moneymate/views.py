@@ -191,6 +191,7 @@ def deleteExpense(request, id):
     # The user will be able to delete the chosen expense.
     expense = Expense.objects.get(pk=id)
     expense.delete()
+    messages.success(request, 'Expense deleted successfully.', extra_tags='red-message')  # noqa
     return redirect('listExpenses')
 
 
@@ -284,7 +285,7 @@ def addIncome(request):
             date=date,
             origin=origin,
             description=description)
-
+        messages.success(request, 'Income saved successfully.')
         return redirect('listIncomes')
 
 
@@ -341,6 +342,7 @@ def editIncome(request, id):
 
         income.save()
 
+        messages.success(request, 'Income updated  successfully.')
         return redirect('listIncomes')
 
 
@@ -349,6 +351,8 @@ def deleteIncome(request, id):
     # The user will be able to delete the chosen expense.
     income = Income.objects.get(pk=id)
     income.delete()
+
+    messages.success(request, 'Expense deleted successfully.', extra_tags='red-message')  # noqa
     return redirect('listIncomes')
 
 
@@ -441,6 +445,7 @@ def addCategory(request):
         category.user = request.user
         category.save()
 
+        messages.success(request, 'Category saved successfully.')
         return redirect('listCategories')
 
 
@@ -488,6 +493,7 @@ def editCategory(request, id):
         category.name = name
         category.save()
 
+        messages.success(request, 'Category updated  successfully.')
         return redirect('listCategories')
 
 
@@ -496,6 +502,7 @@ def deleteCategory(request, id):
     # The user will be able to delete the chosen category.
     category = Category.objects.get(pk=id)
     category.delete()
+    messages.success(request, 'Category deleted successfully.', extra_tags='red-message')  # noqa
     return redirect('listCategories')
 
 
@@ -580,7 +587,7 @@ def addOrigin(request):
         origin = Origin(name=name)
         origin.user = request.user
         origin.save()
-
+        messages.success(request, 'Origin saved successfully.')
         return redirect('listOrigins')
 
 
@@ -625,7 +632,7 @@ def editOrigin(request, id):
 
         origin.name = name
         origin.save()
-
+        messages.success(request, 'Origin updated  successfully.')
         return redirect('listOrigins')
 
 
@@ -634,6 +641,7 @@ def deleteOrigin(request, id):
     # The user will be able to delete the chosen origin.
     origin = Origin.objects.get(pk=id)
     origin.delete()
+    messages.success(request, 'Origin deleted successfully.', extra_tags='red-message')  # noqa
     return redirect('listOrigins')
 
 
