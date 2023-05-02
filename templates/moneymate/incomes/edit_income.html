@@ -21,6 +21,7 @@
 
 <div class="card m-3">
 	<div class="card-body">
+		{% if user.is_authenticated %}
 		<form action="{% url 'edit-income' income.id %}" method="post">
 			{% csrf_token %}
 			<div class="form-group">
@@ -50,6 +51,9 @@
 			</div>
 			<button type="submit" value="update" class="btn btn-primary">Update</button>
 		</form>
+		{% else %}
+        <p>You do not have permission to edit this income.</p>
+      {% endif %}
 	</div>
 </div>
 

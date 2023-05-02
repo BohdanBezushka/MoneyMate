@@ -20,6 +20,7 @@
 	</div>
 </main>
 
+{% if user.is_authenticated %}
 <div class="table-responsive m-3">
 	<table class="table table-striped">
 		<thead>
@@ -59,6 +60,9 @@
 			{% endif %}
 		</tbody>
 	</table>
+	{% else %}
+	<p>You do not have permission to see this list of incomes.</p>
+  {% endif %}
 
 	<!--Here is shown the page number-->
 	<div class="paginate">

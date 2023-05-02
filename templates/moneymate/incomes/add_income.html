@@ -21,6 +21,7 @@
 
 <div class="card m-3">
 	<div class="card-body">
+		{% if user.is_authenticated %}
 		<form action="{% url 'addIncome' %}" method="post">
 			{% csrf_token %}
 			<div class="form-group">
@@ -49,6 +50,9 @@
 			</div>
 			<button type="submit" value="submit" class="btn btn-primary">Submit</button>
 		</form>
+		{% else %}
+        <p>You do not have permission to add this income.</p>
+      {% endif %}
 	</div>
 </div>
 
