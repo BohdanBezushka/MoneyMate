@@ -383,7 +383,7 @@ a.nav-link{
     color: white;
     border: none;
     padding: 6px; 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: default;
 }
@@ -394,7 +394,7 @@ a.nav-link{
     color: white;
     border: none;
     padding: 6px; 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: default;
 }
@@ -405,7 +405,7 @@ a.nav-link{
     color: black;
     border: none;
     padding: 6px; 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: default;
 }
@@ -484,9 +484,16 @@ a.nav-link{
 }
 
 /* For small screens sizes from 600 px wide and down */
-@media (min-width: 600px) {
+@media (max-width: 600px) {
     #result-footer .col-md {
       flex: 0 0 80%;
       max-width: 80%;
     }
-  }
+
+    h5 {
+        font-size: 90%;
+    }
+    #total-expenses, #total-incomes, #balance-button{
+        font-size: 90%;
+    }
+}
