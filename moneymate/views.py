@@ -351,7 +351,7 @@ def deleteIncome(request, id):
     income = Income.objects.get(pk=id)
     income.delete()
 
-    messages.success(request, 'Expense deleted successfully.', extra_tags='red-message')  # noqa
+    messages.success(request, 'Expense deleted successfully.')
     return redirect('listIncomes')
 
 
@@ -501,7 +501,7 @@ def deleteCategory(request, id):
     # The user will be able to delete the chosen category.
     category = Category.objects.get(pk=id)
     category.delete()
-    messages.success(request, 'Category deleted successfully.', extra_tags='red-message')  # noqa
+    messages.success(request, 'Category deleted successfully.')
     return redirect('listCategories')
 
 
@@ -640,7 +640,7 @@ def deleteOrigin(request, id):
     # The user will be able to delete the chosen origin.
     origin = Origin.objects.get(pk=id)
     origin.delete()
-    messages.success(request, 'Origin deleted successfully.', extra_tags='red-message')  # noqa
+    messages.success(request, 'Origin deleted successfully.')
     return redirect('listOrigins')
 
 
