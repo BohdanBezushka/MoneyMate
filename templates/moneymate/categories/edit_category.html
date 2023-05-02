@@ -17,7 +17,7 @@
 
 <div class="card m-3">
 	<div class="card-body">
-		{% if user.is_authenticated %}
+		{% if request.user == category.user %}
 		<form action="{% url 'edit-category' category.id %}" method="post">
 			{% csrf_token %}
 			<div class="form-group">

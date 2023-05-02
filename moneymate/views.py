@@ -614,14 +614,14 @@ def editOrigin(request, id):
     if request.method == 'GET':
         return render(request, 'moneymate/origins/edit_origin.html', context)
     if request.method == 'POST':
-        name = request.POST['name']
-
-        if not name:
-            return render(
-                request,
-                'moneymate/origins/edit_origin.html',
-                context
-                )
+        if request.user == origin.user:
+            name = request.POST['name']
+            if not name:
+                return render(
+                    request,
+                    'moneymate/origins/edit_origin.html',
+                    context
+                    )
 
         origin.name = name
         origin.save()

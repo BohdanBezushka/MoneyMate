@@ -17,7 +17,7 @@
 
 <div class="card m-3">
 	<div class="card-body">
-		{% if user.is_authenticated %}
+		{% if request.user == user %}
 		<form action="{% url 'addCategory' %}" method="post">
 			{% csrf_token %}
 			<div class="form-group">

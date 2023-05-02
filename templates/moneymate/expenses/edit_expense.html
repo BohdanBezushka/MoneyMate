@@ -21,7 +21,7 @@
 
 <div class="card m-3">
 	<div class="card-body">
-		{% if if user.is_authenticated %}
+		{% if request.user == expense.user %}
 		<form action="{% url 'edit-expense' expense.id %}" method="post">
 			{% csrf_token %}
 			<div class="form-group">
