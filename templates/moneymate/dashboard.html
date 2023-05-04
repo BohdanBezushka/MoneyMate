@@ -3,11 +3,14 @@
 <!--Navigation bar-->
 <nav class="navbar navbar-expand-lg bg-dark">
 	<div class="container-fluid">
-		<button class="navbar-toggler .dashboard-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler .dashboard-toggler" type="button" data-bs-toggle="collapse"
+			data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-			<a class="navbar-brand-img img-dashboard" href="{% url 'dashboard' %}"> <img id="page-start" class="img-nav" src="{% static 'img/MoneyMate-Dark.png' %}" alt="Brand:MoneyMate" /></a>
+			<a class="navbar-brand-img img-dashboard" href="{% url 'dashboard' %}"> <img id="page-start" class="img-nav"
+					src="{% static 'img/MoneyMate-Dark.png' %}" alt="Brand:MoneyMate" /></a>
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item links-dashboard">
 					<a class="nav-link" href="{% url 'dashboard' %}">Home</a>
@@ -24,11 +27,11 @@
 				<li class="nav-item links-dashboard">
 					<a class="nav-link" href="{% url 'listOrigins' %}">Origin</a>
 				</li>
-			<!--
+
 				<li class="nav-item links-dashboard">
 					<a class="nav-link" href="{% url 'listCurrencies' %}">Currency</a>
 				</li>
-			-->
+
 			</ul>
 			<form class="d-flex" role="search">
 				<a class="nav-link" href="{% url 'account_logout' %}">
@@ -42,7 +45,8 @@
 <!--The user can choose to add an expense or income-->
 {% block expenses_incomes %}
 <main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-	<div id="control-dashboard" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+	<div id="control-dashboard"
+		class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">
 			{% if request.user.is_authenticated %}
 			<span id="info-dashboard" class="nav-link">Welcome, {{ request.user.username }}!</span>
@@ -53,11 +57,13 @@
 		<div class="btn-toolbar mb-2 mb-md-0">
 			<div class="btn-group me-2">
 				<a class="nav-link" href="{% url 'addExpense' %}">
-					<button id="add-expense" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-minus"></i></button>
+					<button id="add-expense" type="button" class="btn btn-sm btn-outline-secondary"><i
+							class="fa fa-minus"></i></button>
 				</a>
 
 				<a class="nav-link" href="{% url 'addIncome' %}">
-					<button id="add-income" type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-plus"></i></button>
+					<button id="add-income" type="button" class="btn btn-sm btn-outline-secondary"><i
+							class="fa fa-plus"></i></button>
 				</a>
 			</div>
 		</div>
@@ -68,10 +74,11 @@
 <section>
 	<div class="container">
 		<div class="row">
-			<div id="alert-info"  class="col-sm-12">
+			<div id="alert-info" class="col-sm-12">
 				<div class="alert alert-info" role="alert">
 					<h4 class="alert-heading">Important Information:</h4>
-					<p>Welcome to MoneyMate. Before you start recording your expenses and incomes, you need to <u>add your categories for expenses and sources/origins for your incomes</u>.</p>
+					<p>Welcome to MoneyMate. Before you start recording your expenses and incomes, you need to <u>add
+							your categories for expenses and sources/origins for your incomes</u>.</p>
 				</div>
 			</div>
 		</div>
@@ -80,19 +87,22 @@
 
 {% endblock %}
 
-  <footer id="result-footer" class="container bg-dark text-white text-center py-3">
+<footer id="result-footer" class="container bg-dark text-white text-center py-3">
 	<div class="row">
 		<div class="col-4">
 			<h5>Expenses:</h5>
-			<button id="total-expenses" type="button" class="btn-no btn-outline-light-no">{{ totalExpenses }}{{ currency_symbol }}</button>
+			<button id="total-expenses" type="button" class="btn-no btn-outline-light-no">{{ totalExpenses }}
+				{{ currency_symbol }}</button>
 		</div>
 		<div class="col-4">
 			<h5>Incomes:</h5>
-			<button id="total-incomes" type="button" class="btn-no btn-outline-light-no">{{ totalIncomes }}{{ currency_symbol }}</button>
+			<button id="total-incomes" type="button" class="btn-no btn-outline-light-no">{{ totalIncomes }}
+				{{ currency_symbol }}</button>
 		</div>
 		<div class="col-4">
 			<h5>Balance:</h5>
-			<button id="balance-button" type="button" class="btn-no btn-outline-light-no">{{ balance }}{{ currency_symbol }}</button>
+			<button id="balance-button" type="button" class="btn-no btn-outline-light-no">{{ balance }}
+				{{ currency_symbol }}</button>
 		</div>
 	</div>
 </footer>
