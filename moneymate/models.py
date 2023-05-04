@@ -58,6 +58,7 @@ class Currency(models.Model):
     currency = models.CharField(max_length=30)
     abbreviation = models.CharField(max_length=10)
     symbol = models.CharField(max_length=5)
+    is_choosen = models.BooleanField(default=False)
 
     def __str__(self):
         return self.currency

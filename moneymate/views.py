@@ -19,12 +19,10 @@ def homePage(request):
 def dashboard(request):
     # When the user logs in or registers, he/she will be taken
     # directly to the templates/moneymate/dashboard.html file.
-
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -50,11 +48,10 @@ def viewExpensesList(request):
     # By clicking on 'Expenses' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded expenses.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -84,11 +81,10 @@ def addExpense(request):
     # This feature enables users to access their expense records.
     # By clicking on the appropriate button
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -133,11 +129,10 @@ def addExpense(request):
 def editExpense(request, id):
     # The user will be able to edit the chosen expense.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -203,11 +198,10 @@ def viewIncomesList(request):
     # By clicking on 'Incomes' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded incomes.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -239,11 +233,10 @@ def addIncome(request):
     # This feature enables users to access their income records.
     # By clicking on the appropriate button.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -292,11 +285,10 @@ def addIncome(request):
 def editIncome(request, id):
     # The user will be able to edit the chosen income.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -363,11 +355,10 @@ def viewCategoriesList(request):
     # By clicking on 'Categiry' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded categories.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -400,11 +391,10 @@ def addCategory(request):
     # This feature enables users to access their categories.
     # By clicking on the appropriate button.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -452,11 +442,10 @@ def addCategory(request):
 def editCategory(request, id):
     # The user will be able to edit the chategory income.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -513,11 +502,10 @@ def viewOriginsList(request):
     # By clicking on 'Origin' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded origins.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -547,11 +535,10 @@ def addOrigin(request):
     # This feature enables users to access their origins.
     # By clicking on the appropriate button.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -594,11 +581,10 @@ def addOrigin(request):
 def editOrigin(request, id):
     # The user will be able to edit origins.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,ç
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -652,11 +638,10 @@ def viewCurrenciesList(request):
     # By clicking on 'Currency' in the navigation bar of
     # the dashboard.html, users can access a list of their recorded currencies.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -689,11 +674,10 @@ def addCurrency(request):
     # This feature enables users to access their currency records.
     # By clicking on the appropriate button.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -752,11 +736,10 @@ def addCurrency(request):
 def editCurrency(request, id):
     # The user will be able to edit the chosen currency.
 
-    chosen_currency_id = request.session.get('chosen_currency')
+    chosen_currency = Currency.objects.get(user=request.user, is_choosen=True)
     # Currency chosen by the user. If none is chosen,
     # then the euro will be displayed.
-    if chosen_currency_id:
-        chosen_currency = Currency.objects.get(pk=chosen_currency_id)
+    if chosen_currency:
         currency_symbol = chosen_currency.symbol
     else:
         currency_symbol = "€"
@@ -829,7 +812,11 @@ def chooseCurrency(request):
     if request.method == 'POST':
         currency_id = request.POST.get('currency')
         request.session['chosen_currency'] = currency_id
+        currencies = Currency.objects.filter(user=request.user)
+        currencies.update(is_choosen=False)
         currency = Currency.objects.get(pk=currency_id)
+        currency.is_choosen = True
+        currency.save()
         currencies = Currency.objects.filter(user=request.user)
         context = {
             'currency': currency,
@@ -838,6 +825,7 @@ def chooseCurrency(request):
             'totalIncomes': totalIncomes,
             'balance': balance,
             'chosen_currency': currency,
+            'currency_symbol': currency.symbol,
         }
         return render(
             request,
@@ -846,7 +834,11 @@ def chooseCurrency(request):
             )
     else:
         currencies = Currency.objects.filter(user=request.user)
-        context = {'currencies': currencies}
+        currency = Currency.objects.get(user=request.user, is_choosen=True)
+        context = {
+            'currencies': currencies,
+            'currency_symbol': currency.symbol
+            }
         return render(
             request,
             'moneymate/currencies/choose_currency.html',
