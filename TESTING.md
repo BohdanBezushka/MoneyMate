@@ -306,10 +306,10 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 **Homepage**
 
         Mobile 320px
-![Mobile 320px](https://user-images.githubusercontent.com/94321555/235331847-a67d50ff-7da7-4951-ac4c-1733d0233275.png)
+ ![Mobile 320px](https://user-images.githubusercontent.com/94321555/235916579-cb0c3396-9840-44b6-808e-9ed0950bc433.png)
 
         Tablet 768px
-![Tablet 768px](https://user-images.githubusercontent.com/94321555/235331890-472bf0b9-7c4b-4d47-b005-b9c8ecfeae92.png)
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235916866-9d722a86-73de-40ba-b262-430f6419ae69.png)
 
         Desktop 1200px
 ![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235331976-970cf6f5-c050-4ec8-bdcd-b48ea4f7f597.png)
@@ -352,13 +352,13 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 **Dashboard/Menu**
 
         Mobile 320px
-![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332199-759122c4-d676-4374-b1b7-ba0130c38c54.png)
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235917270-793c301f-8c2e-4ab6-93e2-7491fa2f0d91.png)
 
         Tablet 768px
-![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332220-61da860f-0a64-46f1-9a62-9e0faef7d517.png)
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235917574-ae576265-a8ad-48c2-9229-01999c19ae74.png)
 
         Desktop 1200px
-![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332232-53510f65-3e28-4ef7-aec6-2433bd93290d.png)
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235917763-c40e0a72-9bc1-4a9f-9774-cfc38418dbb1.png)
 
 **Dashboard/Expenses-Incomes**
 
@@ -374,13 +374,14 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 **Dashboard/Category-Origin**
 
         Mobile 320px
-![Mobile 320px](https://user-images.githubusercontent.com/94321555/235332336-e5fe5fe8-2baa-4b24-91b1-b5a8bdb01226.png)
+![Mobile 320px](https://user-images.githubusercontent.com/94321555/235918289-00e44aad-f156-4cc8-a475-5ca6d4a3197f.png)
 
         Tablet 768px
-![Tablet 768px](https://user-images.githubusercontent.com/94321555/235332346-8fb93603-4db8-41d7-ba58-c1d0b0857582.png)
+![Tablet 768px](https://user-images.githubusercontent.com/94321555/235918477-a16557c7-4444-4177-91ba-94fb50609cc4.png)
 
         Desktop 1200px
-![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235332358-83a6055b-8674-4720-afac-063fe1d1ed28.png)
+![Desktop 1200px](https://user-images.githubusercontent.com/94321555/235918694-27a2a6a5-10af-45e8-ba36-c57774478495.png)
+
 
 </details>
 

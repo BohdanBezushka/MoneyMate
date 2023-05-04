@@ -313,10 +313,15 @@ The dashboard is what the user will see when they log in or register as a new us
 <summary>Screenshots of the Dashboard/Menu</summary>
 
         Navigation bar
-![Navigation bar](https://user-images.githubusercontent.com/94321555/235272777-8868a603-93f5-45fc-a5dd-e4e3c65949ee.png)
+![Navigation bar](https://user-images.githubusercontent.com/94321555/235912360-8dfb7043-02bd-4b3b-85c2-b3f128149b43.png)
 
         Welcome, add expense or income Section
 ![Welcome, add expense or income Section](https://user-images.githubusercontent.com/94321555/235272856-7deb0b41-462f-4210-92eb-42e48e0302a9.png)
+
+        Confirmation messages for add, edit and delete
+![Add](https://user-images.githubusercontent.com/94321555/235914249-7aa2a6aa-68f8-47f3-aca6-99a4c564d25f.png)
+![Edit](https://user-images.githubusercontent.com/94321555/235914350-9d0e6544-0336-4491-9343-fbad4fb6a678.png)
+![Delete](https://user-images.githubusercontent.com/94321555/235914424-ea950ed1-b253-4398-8aed-558c47e64187.png)
 
         Information Section
 ![Information Section](https://user-images.githubusercontent.com/94321555/235272885-1a80cc7d-9114-401a-b364-30cea82a6c33.png)
